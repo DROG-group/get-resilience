@@ -14,8 +14,8 @@ export default function HomePage() {
             <span className="block text-brand-400 mt-2">In Three Clicks</span>
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-dark-400 max-w-3xl mx-auto">
-            Join Resilience Councils to coordinate reports of platform violations
-            to EU regulators under the Digital Services Act.
+            You have the law. We handle the bureaucracy. Join a Resilience Council
+            and amplify your reports across all 27 EU regulators.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -28,7 +28,7 @@ export default function HomePage() {
               href="/how-it-works"
               className="bg-transparent hover:bg-dark hover:text-white font-semibold px-8 py-3.5 rounded-full text-lg transition-colors border-2 border-dark text-dark"
             >
-              Learn How It Works
+              How It Works
             </Link>
           </div>
         </div>
@@ -41,29 +41,29 @@ export default function HomePage() {
             Three Steps to Platform Accountability
           </h2>
           <p className="text-center text-dark-400 mb-12 max-w-2xl mx-auto">
-            The Digital Services Act gives EU citizens real power. Here&apos;s how to use it.
+            Citizen networks documenting platform violations across Europe. The key is coordination and automation.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 step: '1',
-                title: 'Create or Join a Council',
+                title: 'Start or Join a Council',
                 description:
-                  'Form a Resilience Council with citizens from your country or focus area. Councils coordinate collective action for maximum impact.',
+                  'Form a network of citizens in your country or focus area. Councils coordinate collective evidence against platform violations.',
                 icon: '&#x1F3DB;',
               },
               {
                 step: '2',
-                title: 'Document & Report',
+                title: 'Document Violations',
                 description:
-                  'Screenshot violations, categorize them by type, and submit structured reports. We map each violation to specific DSA articles.',
+                  'Use RADAR-compliant structured reporting to document platform violations. Every report is mapped to specific DSA articles for legal precision.',
                 icon: '&#x1F4F8;',
               },
               {
                 step: '3',
-                title: 'Coordinated EU Action',
+                title: 'Coordinated EU Filing',
                 description:
-                  'Councils aggregate reports and forward them to national Digital Services Coordinators and EU regulators for enforcement.',
+                  'Your council submits identical evidence to Digital Services Coordinators across all 27 member states simultaneously. Under DSA Articles 51 and 56, regulators must coordinate investigations.',
                 icon: '&#x2696;',
               },
             ].map((item) => (
@@ -89,21 +89,23 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-dark mb-6">
-                The Digital Services Act: Your Rights
+                The Digital Services Act: Your Legal Leverage
               </h2>
               <p className="text-dark-400 mb-4">
                 The EU Digital Services Act (DSA) is the most comprehensive platform regulation
                 in the world. It requires Very Large Online Platforms to be transparent about
-                content moderation and take responsibility for systemic risks.
+                content moderation and take responsibility for systemic risks. These are the
+                specific articles that give citizens real power:
               </p>
               <ul className="space-y-3">
                 {[
-                  'Right to report illegal content (Art. 16)',
-                  'Transparency in content moderation (Art. 24)',
-                  'Ban on dark patterns (Art. 25)',
-                  'Advertising transparency (Art. 26-27)',
-                  'Risk assessment obligations (Art. 34-35)',
-                  'Trusted flaggers status (Art. 22)',
+                  'Report illegal content (Art. 16)',
+                  'Trusted flagger priority processing (Art. 22)',
+                  'Content moderation transparency (Art. 24)',
+                  'Ban on dark patterns and deceptive design (Art. 25)',
+                  'Advertising transparency requirements (Art. 26-27)',
+                  'Systemic risk assessment obligations (Art. 34-35)',
+                  'Cross-border coordination between authorities (Art. 51 & 56)',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <span className="text-brand-400 mt-0.5">&#10003;</span>
@@ -114,16 +116,20 @@ export default function HomePage() {
             </div>
             <div className="bg-[#f5f5f7] rounded-2xl p-8">
               <h3 className="text-xl font-semibold text-brand-400 mb-4">
-                Why Collective Action?
+                Why Coordination Matters
               </h3>
               <p className="text-dark-400 mb-4">
-                Individual reports are easily dismissed. But when a Resilience Council
-                submits coordinated evidence of systematic violations, regulators must act.
+                Individual reports can be dismissed. But when councils submit matching
+                structured evidence to Digital Services Coordinators across multiple member
+                states simultaneously, regulators are legally obligated to investigate and
+                coordinate under DSA Articles 51 and 56.
               </p>
               <p className="text-dark-400 mb-4">
-                The DSA gives organizations &ldquo;trusted flagger&rdquo; status &mdash; their reports
-                get priority processing. Resilience Councils aim to earn this status
-                through consistent, high-quality reporting.
+                Poland&apos;s Resilience Council &mdash; the first in the EU &mdash; has proven
+                this model works. When multiple national authorities receive credible reports
+                of the same violation, they must coordinate investigations. Your evidence
+                creates public records that strengthen future enforcement actions, compensation
+                claims, and regulatory pressure campaigns.
               </p>
               <Link href="/about" className="text-brand-400 font-semibold hover:text-brand-300 transition-colors">
                 Learn more about Resilience Councils &rarr;
@@ -141,10 +147,10 @@ export default function HomePage() {
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: 'DSA Mapping', desc: 'Every report is linked to specific DSA articles for legal precision', icon: '&#x1F4DC;' },
-              { title: 'Evidence Upload', desc: 'Attach screenshots and documents as evidence for your reports', icon: '&#x1F4CE;' },
-              { title: 'Council Coordination', desc: 'Work together to identify patterns and systemic violations', icon: '&#x1F91D;' },
-              { title: 'Multi-Country', desc: 'Councils span all 27 EU member states for cross-border cases', icon: '&#x1F1EA;&#x1F1FA;' },
+              { title: 'DSA-Compliant Reporting', desc: 'RADAR.CheckFirst structured data ensuring compliance with DSA documentation requirements', icon: '&#x1F4DC;' },
+              { title: 'Evidence Archive', desc: 'Creates a persistent public record that strengthens future enforcement actions and compensation claims', icon: '&#x1F4CE;' },
+              { title: 'Cross-Border Coordination', desc: 'Automated filing across all 27 EU member states for maximum regulatory pressure', icon: '&#x1F1EA;&#x1F1FA;' },
+              { title: 'Resilience Council Network', desc: 'Join the European network alongside Poland\u2019s pioneering council, the first in the EU', icon: '&#x1F91D;' },
             ].map((feature) => (
               <div key={feature.title} className="bg-white rounded-xl border border-black/[0.08] p-6 hover:border-brand-400 hover:shadow-[0_20px_40px_rgba(107,76,230,0.1)] hover:-translate-y-1 transition-all duration-200">
                 <div
@@ -159,6 +165,25 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Stats Bar */}
+      <section className="py-12 bg-[#fafafa]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            {[
+              { value: '6', label: 'Partner Organizations' },
+              { value: '5', label: 'Countries Active' },
+              { value: '170+', label: 'Research Articles' },
+              { value: '27', label: 'EU Member States' },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <div className="text-3xl sm:text-4xl font-extrabold text-brand-400">{stat.value}</div>
+                <div className="mt-1 text-sm text-dark-400">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 bg-dark text-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
@@ -167,7 +192,7 @@ export default function HomePage() {
           </h2>
           <p className="text-white/70 text-lg mb-8">
             Join thousands of EU citizens using the Digital Services Act to fight
-            disinformation and protect democratic discourse.
+            information manipulation and protect democratic discourse.
           </p>
           <Link
             href="/register"

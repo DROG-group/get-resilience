@@ -14,7 +14,7 @@ export default function NavBar() {
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl text-dark">
             <span className="text-brand-400 text-2xl">&#9733;</span>
-            <span>Get Resilience</span>
+            <span>GetResilience</span>
           </Link>
 
           {/* Desktop nav */}

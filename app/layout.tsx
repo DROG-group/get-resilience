@@ -5,8 +5,8 @@ import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Get Resilience - EU Resilience Councils',
-  description: 'From Screenshot to Legal Action In Three Clicks. Join Resilience Councils to coordinate reports of platform violations to EU regulators under the Digital Services Act.',
+  title: 'GetResilience \u2014 Citizen-led Resilience Councils',
+  description: 'From Screenshot to Legal Action In Three Clicks. A decentralized platform enabling EU citizens to establish Resilience Councils and coordinate platform accountability under the Digital Services Act.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -1,4 +1,4 @@
--- Get Resilience Database Schema
+-- GetResilience Database Schema
 -- All tables prefixed with gr_ to coexist with EMOD+ in shared Supabase instance
 
 -- ============================================================

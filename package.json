@@ -1,7 +1,7 @@
 {
   "name": "get-resilience",
   "version": "1.0.0",
-  "description": "Get Resilience - EU Resilience Councils Platform",
+  "description": "GetResilience - Citizen-led Resilience Councils Platform",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
