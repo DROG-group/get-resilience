@@ -12,12 +12,12 @@ export default function ReportCard({ report }: { report: Report }) {
     <div className="card p-6">
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
-          <h3 className="text-lg font-semibold text-gray-900 truncate">{report.title}</h3>
+          <h3 className="text-lg font-semibold text-dark-50 truncate">{report.title}</h3>
           <div className="flex items-center gap-2 mt-2 flex-wrap">
             <StatusBadge status={report.status} />
             <ViolationTypeBadge type={report.violation_type} />
             {platform && (
-              <span className="text-xs text-gray-500">
+              <span className="text-xs text-dark-400">
                 {platform.icon} {platform.name}
               </span>
             )}
@@ -25,16 +25,16 @@ export default function ReportCard({ report }: { report: Report }) {
         </div>
       </div>
       {report.description && (
-        <p className="mt-3 text-sm text-gray-600 line-clamp-2">{report.description}</p>
+        <p className="mt-3 text-sm text-dark-400 line-clamp-2">{report.description}</p>
       )}
-      <div className="mt-4 flex items-center justify-between text-sm text-gray-500">
+      <div className="mt-4 flex items-center justify-between text-sm text-dark-400">
         <span>{formatDate(report.created_at)}</span>
         {report.content_url && (
           <a
             href={report.content_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-brand-400 hover:underline"
+            className="text-brand-300 hover:underline"
           >
             View content
           </a>

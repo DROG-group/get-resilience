@@ -44,9 +44,9 @@ export default function RegisterPage() {
         <div className="w-full max-w-md text-center">
           <div className="card p-8">
             <div className="text-5xl mb-4">&#9993;</div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Check your email</h2>
-            <p className="text-gray-600">
-              We&apos;ve sent a confirmation link to <strong>{email}</strong>.
+            <h2 className="text-2xl font-bold text-dark-50 mb-2">Check your email</h2>
+            <p className="text-dark-400">
+              We&apos;ve sent a confirmation link to <strong className="text-dark-200">{email}</strong>.
               Click it to activate your account and start building resilience.
             </p>
             <Link href="/login" className="btn-primary mt-6 inline-block">
@@ -62,15 +62,15 @@ export default function RegisterPage() {
     <div className="min-h-[80vh] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Join Get Resilience</h1>
-          <p className="text-gray-600 mt-2">
+          <h1 className="text-3xl font-bold text-dark-50">Join Get Resilience</h1>
+          <p className="text-dark-400 mt-2">
             Create your account and start holding platforms accountable
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="card p-8 space-y-5">
           {error && (
-            <div className="bg-red-50 text-red-700 px-4 py-3 rounded-lg text-sm">
+            <div className="bg-red-900/30 text-red-400 border border-red-800 px-4 py-3 rounded-lg text-sm">
               {error}
             </div>
           )}
@@ -124,7 +124,7 @@ export default function RegisterPage() {
             {loading ? 'Creating account...' : 'Create Account'}
           </button>
 
-          <p className="text-center text-sm text-gray-600">
+          <p className="text-center text-sm text-dark-400">
             Already have an account?{' '}
             <Link href="/login" className="text-brand-400 font-medium hover:underline">
               Sign in

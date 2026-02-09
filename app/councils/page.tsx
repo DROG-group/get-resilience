@@ -17,8 +17,8 @@ export default function CouncilsPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">Resilience Councils</h1>
-          <p className="text-gray-600 mt-1">Browse and join public councils</p>
+          <h1 className="text-3xl font-bold text-dark-50">Resilience Councils</h1>
+          <p className="text-dark-400 mt-1">Browse and join public councils</p>
         </div>
         {user && (
           <Link href="/councils/create" className="btn-primary whitespace-nowrap">
@@ -46,10 +46,10 @@ export default function CouncilsPage() {
 
       {/* Results */}
       {loading ? (
-        <div className="text-center py-12 text-gray-500">Loading councils...</div>
+        <div className="text-center py-12 text-dark-400">Loading councils...</div>
       ) : councils.length === 0 ? (
         <div className="text-center py-12">
-          <p className="text-gray-500 mb-4">No councils found</p>
+          <p className="text-dark-400 mb-4">No councils found</p>
           {user && (
             <Link href="/councils/create" className="btn-secondary">
               Create the first one

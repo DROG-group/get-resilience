@@ -14,8 +14,8 @@ export default function ReportsPage() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">My Reports</h1>
-          <p className="text-gray-600 mt-1">Track your submitted violation reports</p>
+          <h1 className="text-3xl font-bold text-dark-50">My Reports</h1>
+          <p className="text-dark-400 mt-1">Track your submitted violation reports</p>
         </div>
         <Link href="/reports/new" className="btn-primary whitespace-nowrap">
           New Report
@@ -27,7 +27,7 @@ export default function ReportsPage() {
         <button
           onClick={() => setStatusFilter('')}
           className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-            !statusFilter ? 'bg-brand-400 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            !statusFilter ? 'bg-brand-400 text-white' : 'bg-dark-800 text-dark-400 hover:bg-dark-700'
           }`}
         >
           All
@@ -39,7 +39,7 @@ export default function ReportsPage() {
             className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
               statusFilter === status.id
                 ? 'bg-brand-400 text-white'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                : 'bg-dark-800 text-dark-400 hover:bg-dark-700'
             }`}
           >
             {status.name}
@@ -49,10 +49,10 @@ export default function ReportsPage() {
 
       {/* Results */}
       {loading ? (
-        <div className="text-center py-12 text-gray-500">Loading reports...</div>
+        <div className="text-center py-12 text-dark-400">Loading reports...</div>
       ) : reports.length === 0 ? (
         <div className="text-center py-12">
-          <p className="text-gray-500 mb-4">
+          <p className="text-dark-400 mb-4">
             {statusFilter ? 'No reports with this status' : 'You haven\'t submitted any reports yet'}
           </p>
           <Link href="/reports/new" className="btn-secondary">

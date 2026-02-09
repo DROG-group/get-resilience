@@ -15,7 +15,7 @@ export default function DashboardPage() {
 
   if (authLoading) {
     return (
-      <div className="max-w-7xl mx-auto px-4 py-12 text-center text-gray-500">
+      <div className="max-w-7xl mx-auto px-4 py-12 text-center text-dark-400">
         Loading...
       </div>
     )
@@ -27,10 +27,10 @@ export default function DashboardPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Welcome */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">
+        <h1 className="text-3xl font-bold text-dark-50">
           Welcome back{profile?.full_name ? `, ${profile.full_name}` : ''}
         </h1>
-        <p className="text-gray-600 mt-1">
+        <p className="text-dark-400 mt-1">
           {profile?.country ? getCountryName(profile.country) : 'EU Citizen'}
           {profile?.organization ? ` \u2022 ${profile.organization}` : ''}
         </p>
@@ -40,34 +40,34 @@ export default function DashboardPage() {
       <div className="grid sm:grid-cols-3 gap-4 mb-12">
         <Link
           href="/reports/new"
-          className="card p-6 text-center hover:border-brand-300 transition-colors"
+          className="card p-6 text-center hover:border-brand-400 transition-colors"
         >
           <div className="text-3xl mb-2">&#x1F4F8;</div>
-          <h3 className="font-semibold text-gray-900">Submit Report</h3>
-          <p className="text-sm text-gray-500 mt-1">Document a platform violation</p>
+          <h3 className="font-semibold text-dark-50">Submit Report</h3>
+          <p className="text-sm text-dark-400 mt-1">Document a platform violation</p>
         </Link>
         <Link
           href="/councils/create"
-          className="card p-6 text-center hover:border-brand-300 transition-colors"
+          className="card p-6 text-center hover:border-brand-400 transition-colors"
         >
           <div className="text-3xl mb-2">&#x1F3DB;</div>
-          <h3 className="font-semibold text-gray-900">Create Council</h3>
-          <p className="text-sm text-gray-500 mt-1">Start a new Resilience Council</p>
+          <h3 className="font-semibold text-dark-50">Create Council</h3>
+          <p className="text-sm text-dark-400 mt-1">Start a new Resilience Council</p>
         </Link>
         <Link
           href="/councils"
-          className="card p-6 text-center hover:border-brand-300 transition-colors"
+          className="card p-6 text-center hover:border-brand-400 transition-colors"
         >
           <div className="text-3xl mb-2">&#x1F50D;</div>
-          <h3 className="font-semibold text-gray-900">Browse Councils</h3>
-          <p className="text-sm text-gray-500 mt-1">Find and join existing councils</p>
+          <h3 className="font-semibold text-dark-50">Browse Councils</h3>
+          <p className="text-sm text-dark-400 mt-1">Find and join existing councils</p>
         </Link>
       </div>
 
       {/* My Councils */}
       <div className="mb-12">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-gray-900">
+          <h2 className="text-xl font-semibold text-dark-50">
             My Councils ({councils.length})
           </h2>
           <Link href="/councils" className="text-sm text-brand-400 hover:underline">
@@ -75,10 +75,10 @@ export default function DashboardPage() {
           </Link>
         </div>
         {councilsLoading ? (
-          <div className="text-center py-8 text-gray-500">Loading...</div>
+          <div className="text-center py-8 text-dark-400">Loading...</div>
         ) : councils.length === 0 ? (
           <div className="card p-8 text-center">
-            <p className="text-gray-500 mb-3">You haven&apos;t joined any councils yet</p>
+            <p className="text-dark-400 mb-3">You haven&apos;t joined any councils yet</p>
             <Link href="/councils" className="btn-secondary">
               Browse Councils
             </Link>
@@ -95,7 +95,7 @@ export default function DashboardPage() {
       {/* Recent Reports */}
       <div>
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-gray-900">
+          <h2 className="text-xl font-semibold text-dark-50">
             Recent Reports ({reports.length})
           </h2>
           <Link href="/reports" className="text-sm text-brand-400 hover:underline">
@@ -103,10 +103,10 @@ export default function DashboardPage() {
           </Link>
         </div>
         {reportsLoading ? (
-          <div className="text-center py-8 text-gray-500">Loading...</div>
+          <div className="text-center py-8 text-dark-400">Loading...</div>
         ) : recentReports.length === 0 ? (
           <div className="card p-8 text-center">
-            <p className="text-gray-500 mb-3">You haven&apos;t submitted any reports yet</p>
+            <p className="text-dark-400 mb-3">You haven&apos;t submitted any reports yet</p>
             <Link href="/reports/new" className="btn-secondary">
               Submit your first report
             </Link>

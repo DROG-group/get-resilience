@@ -93,7 +93,7 @@ function NewReportForm() {
   return (
     <form onSubmit={handleSubmit} className="card p-8 space-y-6">
       {error && (
-        <div className="bg-red-50 text-red-700 px-4 py-3 rounded-lg text-sm">{error}</div>
+        <div className="bg-red-900/30 text-red-400 border border-red-800 px-4 py-3 rounded-lg text-sm">{error}</div>
       )}
 
       <div>
@@ -152,8 +152,8 @@ function NewReportForm() {
               key={type.id}
               className={`flex items-start gap-3 p-3 rounded-lg border cursor-pointer transition-colors ${
                 violationType === type.id
-                  ? 'border-brand-400 bg-brand-50'
-                  : 'border-gray-200 hover:border-gray-300'
+                  ? 'border-brand-400 bg-brand-400/10'
+                  : 'border-dark-700 hover:border-dark-600'
               }`}
             >
               <input
@@ -166,10 +166,10 @@ function NewReportForm() {
                 required
               />
               <div>
-                <p className="text-sm font-medium text-gray-900">{type.name}</p>
-                <p className="text-xs text-gray-500">{type.description}</p>
+                <p className="text-sm font-medium text-dark-50">{type.name}</p>
+                <p className="text-xs text-dark-400">{type.description}</p>
                 {type.dsaArticle && (
-                  <p className="text-xs text-brand-400 mt-0.5">DSA {type.dsaArticle}</p>
+                  <p className="text-xs text-brand-300 mt-0.5">DSA {type.dsaArticle}</p>
                 )}
               </div>
             </label>
@@ -210,11 +210,11 @@ function NewReportForm() {
 export default function NewReportPage() {
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Submit a Violation Report</h1>
-      <p className="text-gray-600 mb-8">
+      <h1 className="text-3xl font-bold text-dark-50 mb-2">Submit a Violation Report</h1>
+      <p className="text-dark-400 mb-8">
         Document a platform violation with evidence. Your report will be linked to the relevant DSA articles.
       </p>
-      <Suspense fallback={<div className="text-center py-8 text-gray-500">Loading...</div>}>
+      <Suspense fallback={<div className="text-center py-8 text-dark-400">Loading...</div>}>
         <NewReportForm />
       </Suspense>
     </div>
