@@ -9,33 +9,33 @@ export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-eu-blue-500 text-white shadow-lg">
+    <nav className="bg-brand-400 text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-            <span className="text-eu-yellow-500 text-2xl">&#9733;</span>
+            <span className="text-gold-500 text-2xl">&#9733;</span>
             <span>Get Resilience</span>
           </Link>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-6">
-            <Link href="/about" className="hover:text-eu-yellow-400 transition-colors">
+            <Link href="/about" className="hover:text-gold-400 transition-colors">
               About
             </Link>
-            <Link href="/how-it-works" className="hover:text-eu-yellow-400 transition-colors">
+            <Link href="/how-it-works" className="hover:text-gold-400 transition-colors">
               How It Works
             </Link>
-            <Link href="/councils" className="hover:text-eu-yellow-400 transition-colors">
+            <Link href="/councils" className="hover:text-gold-400 transition-colors">
               Councils
             </Link>
             {!loading && (
               <>
                 {user ? (
                   <>
-                    <Link href="/dashboard" className="hover:text-eu-yellow-400 transition-colors">
+                    <Link href="/dashboard" className="hover:text-gold-400 transition-colors">
                       Dashboard
                     </Link>
-                    <Link href="/reports" className="hover:text-eu-yellow-400 transition-colors">
+                    <Link href="/reports" className="hover:text-gold-400 transition-colors">
                       My Reports
                     </Link>
                     <button
@@ -49,13 +49,13 @@ export default function NavBar() {
                   <>
                     <Link
                       href="/login"
-                      className="hover:text-eu-yellow-400 transition-colors"
+                      className="hover:text-gold-400 transition-colors"
                     >
                       Sign In
                     </Link>
                     <Link
                       href="/register"
-                      className="bg-eu-yellow-500 text-eu-blue-500 font-semibold px-4 py-1.5 rounded-lg hover:bg-eu-yellow-400 transition-colors"
+                      className="bg-gold-500 text-brand-400 font-semibold px-4 py-1.5 rounded-lg hover:bg-gold-400 transition-colors"
                     >
                       Join Now
                     </Link>
@@ -84,33 +84,33 @@ export default function NavBar() {
         {/* Mobile menu */}
         {menuOpen && (
           <div className="md:hidden pb-4 space-y-2">
-            <Link href="/about" className="block py-2 hover:text-eu-yellow-400" onClick={() => setMenuOpen(false)}>
+            <Link href="/about" className="block py-2 hover:text-gold-400" onClick={() => setMenuOpen(false)}>
               About
             </Link>
-            <Link href="/how-it-works" className="block py-2 hover:text-eu-yellow-400" onClick={() => setMenuOpen(false)}>
+            <Link href="/how-it-works" className="block py-2 hover:text-gold-400" onClick={() => setMenuOpen(false)}>
               How It Works
             </Link>
-            <Link href="/councils" className="block py-2 hover:text-eu-yellow-400" onClick={() => setMenuOpen(false)}>
+            <Link href="/councils" className="block py-2 hover:text-gold-400" onClick={() => setMenuOpen(false)}>
               Councils
             </Link>
             {!loading && user ? (
               <>
-                <Link href="/dashboard" className="block py-2 hover:text-eu-yellow-400" onClick={() => setMenuOpen(false)}>
+                <Link href="/dashboard" className="block py-2 hover:text-gold-400" onClick={() => setMenuOpen(false)}>
                   Dashboard
                 </Link>
-                <Link href="/reports" className="block py-2 hover:text-eu-yellow-400" onClick={() => setMenuOpen(false)}>
+                <Link href="/reports" className="block py-2 hover:text-gold-400" onClick={() => setMenuOpen(false)}>
                   My Reports
                 </Link>
-                <button onClick={() => { signOut(); setMenuOpen(false) }} className="block py-2 hover:text-eu-yellow-400">
+                <button onClick={() => { signOut(); setMenuOpen(false) }} className="block py-2 hover:text-gold-400">
                   Sign Out
                 </button>
               </>
             ) : !loading ? (
               <>
-                <Link href="/login" className="block py-2 hover:text-eu-yellow-400" onClick={() => setMenuOpen(false)}>
+                <Link href="/login" className="block py-2 hover:text-gold-400" onClick={() => setMenuOpen(false)}>
                   Sign In
                 </Link>
-                <Link href="/register" className="block py-2 hover:text-eu-yellow-400" onClick={() => setMenuOpen(false)}>
+                <Link href="/register" className="block py-2 hover:text-gold-400" onClick={() => setMenuOpen(false)}>
                   Join Now
                 </Link>
               </>

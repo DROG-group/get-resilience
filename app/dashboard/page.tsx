@@ -40,7 +40,7 @@ export default function DashboardPage() {
       <div className="grid sm:grid-cols-3 gap-4 mb-12">
         <Link
           href="/reports/new"
-          className="card p-6 text-center hover:border-eu-blue-300 transition-colors"
+          className="card p-6 text-center hover:border-brand-300 transition-colors"
         >
           <div className="text-3xl mb-2">&#x1F4F8;</div>
           <h3 className="font-semibold text-gray-900">Submit Report</h3>
@@ -48,7 +48,7 @@ export default function DashboardPage() {
         </Link>
         <Link
           href="/councils/create"
-          className="card p-6 text-center hover:border-eu-blue-300 transition-colors"
+          className="card p-6 text-center hover:border-brand-300 transition-colors"
         >
           <div className="text-3xl mb-2">&#x1F3DB;</div>
           <h3 className="font-semibold text-gray-900">Create Council</h3>
@@ -56,7 +56,7 @@ export default function DashboardPage() {
         </Link>
         <Link
           href="/councils"
-          className="card p-6 text-center hover:border-eu-blue-300 transition-colors"
+          className="card p-6 text-center hover:border-brand-300 transition-colors"
         >
           <div className="text-3xl mb-2">&#x1F50D;</div>
           <h3 className="font-semibold text-gray-900">Browse Councils</h3>
@@ -70,7 +70,7 @@ export default function DashboardPage() {
           <h2 className="text-xl font-semibold text-gray-900">
             My Councils ({councils.length})
           </h2>
-          <Link href="/councils" className="text-sm text-eu-blue-500 hover:underline">
+          <Link href="/councils" className="text-sm text-brand-400 hover:underline">
             Browse all
           </Link>
         </div>
@@ -98,7 +98,7 @@ export default function DashboardPage() {
           <h2 className="text-xl font-semibold text-gray-900">
             Recent Reports ({reports.length})
           </h2>
-          <Link href="/reports" className="text-sm text-eu-blue-500 hover:underline">
+          <Link href="/reports" className="text-sm text-brand-400 hover:underline">
             View all
           </Link>
         </div>

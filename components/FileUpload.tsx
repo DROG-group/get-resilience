@@ -31,7 +31,7 @@ export default function FileUpload({ onFilesSelected, maxFiles = 5, accept = 'im
     <div>
       <div
         className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors ${
-          dragActive ? 'border-eu-blue-500 bg-eu-blue-50' : 'border-gray-300 hover:border-eu-blue-400'
+          dragActive ? 'border-brand-400 bg-brand-50' : 'border-gray-300 hover:border-brand-300'
         }`}
         onClick={() => inputRef.current?.click()}
         onDragOver={(e) => { e.preventDefault(); setDragActive(true) }}
@@ -46,7 +46,7 @@ export default function FileUpload({ onFilesSelected, maxFiles = 5, accept = 'im
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
         </svg>
         <p className="text-sm text-gray-600">
-          Drop screenshots here or <span className="text-eu-blue-500 font-medium">browse</span>
+          Drop screenshots here or <span className="text-brand-400 font-medium">browse</span>
         </p>
         <p className="text-xs text-gray-400 mt-1">
           Images or PDF, max {maxFiles} files

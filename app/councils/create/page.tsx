@@ -108,7 +108,7 @@ export default function CreateCouncilPage() {
             id="isPublic"
             checked={isPublic}
             onChange={(e) => setIsPublic(e.target.checked)}
-            className="w-4 h-4 text-eu-blue-500 rounded"
+            className="w-4 h-4 text-brand-400 rounded"
           />
           <label htmlFor="isPublic" className="text-sm text-gray-700">
             Public council (anyone can find and join)

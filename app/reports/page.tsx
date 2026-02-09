@@ -27,7 +27,7 @@ export default function ReportsPage() {
         <button
           onClick={() => setStatusFilter('')}
           className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-            !statusFilter ? 'bg-eu-blue-500 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            !statusFilter ? 'bg-brand-400 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           }`}
         >
           All
@@ -38,7 +38,7 @@ export default function ReportsPage() {
             onClick={() => setStatusFilter(status.id)}
             className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
               statusFilter === status.id
-                ? 'bg-eu-blue-500 text-white'
+                ? 'bg-brand-400 text-white'
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
           >

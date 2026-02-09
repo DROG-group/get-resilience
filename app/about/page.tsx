@@ -6,8 +6,8 @@ export default function AboutPage() {
       <h1 className="text-4xl font-bold text-gray-900 mb-6">About Get Resilience</h1>
 
       <section className="prose prose-lg max-w-none">
-        <div className="bg-eu-blue-50 rounded-2xl p-8 mb-12">
-          <h2 className="text-2xl font-bold text-eu-blue-500 mt-0 mb-4">
+        <div className="bg-brand-50 rounded-2xl p-8 mb-12">
+          <h2 className="text-2xl font-bold text-brand-400 mt-0 mb-4">
             What Are Resilience Councils?
           </h2>
           <p className="text-gray-700 mb-4">
@@ -62,7 +62,7 @@ export default function AboutPage() {
             href="https://saufex.eu"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-eu-blue-500 hover:underline font-medium"
+            className="text-brand-400 hover:underline font-medium"
           >
             SAUFEX
           </a>{' '}

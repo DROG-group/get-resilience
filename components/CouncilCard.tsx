@@ -8,10 +8,10 @@ export default function CouncilCard({ council }: { council: Council }) {
       <div className="flex items-start justify-between">
         <div className="flex-1 min-w-0">
           <h3 className="text-lg font-semibold text-gray-900 truncate">{council.name}</h3>
-          <p className="text-sm text-eu-blue-500 mt-1">{getCountryName(council.country)}</p>
+          <p className="text-sm text-brand-400 mt-1">{getCountryName(council.country)}</p>
         </div>
         {council.focus_area && (
-          <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-eu-blue-50 text-eu-blue-700 whitespace-nowrap">
+          <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-brand-50 text-brand-700 whitespace-nowrap">
             {council.focus_area}
           </span>
         )}

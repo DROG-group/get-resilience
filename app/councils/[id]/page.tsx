@@ -54,7 +54,7 @@ export default function CouncilDetailPage({ params }: { params: Promise<{ id: st
     return (
       <div className="max-w-4xl mx-auto px-4 py-12 text-center">
         <h1 className="text-2xl font-bold text-gray-900 mb-2">Council not found</h1>
-        <Link href="/councils" className="text-eu-blue-500 hover:underline">
+        <Link href="/councils" className="text-brand-400 hover:underline">
           Browse all councils
         </Link>
       </div>
@@ -72,7 +72,7 @@ export default function CouncilDetailPage({ params }: { params: Promise<{ id: st
             {council.focus_area && (
               <>
                 <span>&middot;</span>
-                <span className="bg-eu-blue-50 text-eu-blue-700 px-2 py-0.5 rounded-full text-xs font-medium">
+                <span className="bg-brand-50 text-brand-700 px-2 py-0.5 rounded-full text-xs font-medium">
                   {council.focus_area}
                 </span>
               </>
@@ -108,15 +108,15 @@ export default function CouncilDetailPage({ params }: { params: Promise<{ id: st
       {/* Stats */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
         <div className="card p-4 text-center">
-          <p className="text-2xl font-bold text-eu-blue-500">{council.member_count}</p>
+          <p className="text-2xl font-bold text-brand-400">{council.member_count}</p>
           <p className="text-sm text-gray-600">Members</p>
         </div>
         <div className="card p-4 text-center">
-          <p className="text-2xl font-bold text-eu-blue-500">{council.report_count}</p>
+          <p className="text-2xl font-bold text-brand-400">{council.report_count}</p>
           <p className="text-sm text-gray-600">Reports</p>
         </div>
         <div className="card p-4 text-center">
-          <p className="text-2xl font-bold text-eu-blue-500">{formatDate(council.created_at)}</p>
+          <p className="text-2xl font-bold text-brand-400">{formatDate(council.created_at)}</p>
           <p className="text-sm text-gray-600">Founded</p>
         </div>
       </div>
@@ -132,7 +132,7 @@ export default function CouncilDetailPage({ params }: { params: Promise<{ id: st
               <span className="text-sm text-gray-700">{member.user_id.slice(0, 8)}...</span>
               <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
                 member.role === 'admin'
-                  ? 'bg-eu-blue-100 text-eu-blue-700'
+                  ? 'bg-brand-100 text-brand-700'
                   : member.role === 'moderator'
                   ? 'bg-yellow-100 text-yellow-700'
                   : 'bg-gray-100 text-gray-600'

@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
-              <span className="text-eu-yellow-500">&#9733;</span> Get Resilience
+              <span className="text-gold-500">&#9733;</span> Get Resilience
             </h3>
             <p className="text-sm leading-relaxed">
               Empowering EU citizens to coordinate platform accountability under

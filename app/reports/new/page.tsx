@@ -152,7 +152,7 @@ function NewReportForm() {
               key={type.id}
               className={`flex items-start gap-3 p-3 rounded-lg border cursor-pointer transition-colors ${
                 violationType === type.id
-                  ? 'border-eu-blue-500 bg-eu-blue-50'
+                  ? 'border-brand-400 bg-brand-50'
                   : 'border-gray-200 hover:border-gray-300'
               }`}
             >
@@ -169,7 +169,7 @@ function NewReportForm() {
                 <p className="text-sm font-medium text-gray-900">{type.name}</p>
                 <p className="text-xs text-gray-500">{type.description}</p>
                 {type.dsaArticle && (
-                  <p className="text-xs text-eu-blue-500 mt-0.5">DSA {type.dsaArticle}</p>
+                  <p className="text-xs text-brand-400 mt-0.5">DSA {type.dsaArticle}</p>
                 )}
               </div>
             </label>

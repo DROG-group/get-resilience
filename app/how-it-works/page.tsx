@@ -11,7 +11,7 @@ export default function HowItWorksPage() {
       {/* Step 1 */}
       <div className="mb-16">
         <div className="flex items-center gap-4 mb-6">
-          <div className="flex items-center justify-center w-12 h-12 bg-eu-blue-500 text-white text-xl font-bold rounded-full">
+          <div className="flex items-center justify-center w-12 h-12 bg-brand-400 text-white text-xl font-bold rounded-full">
             1
           </div>
           <h2 className="text-2xl font-bold text-gray-900">Create or Join a Council</h2>
@@ -47,7 +47,7 @@ export default function HowItWorksPage() {
       {/* Step 2 */}
       <div className="mb-16">
         <div className="flex items-center gap-4 mb-6">
-          <div className="flex items-center justify-center w-12 h-12 bg-eu-blue-500 text-white text-xl font-bold rounded-full">
+          <div className="flex items-center justify-center w-12 h-12 bg-brand-400 text-white text-xl font-bold rounded-full">
             2
           </div>
           <h2 className="text-2xl font-bold text-gray-900">Document & Report</h2>
@@ -58,7 +58,7 @@ export default function HowItWorksPage() {
           </p>
           <div className="bg-gray-50 rounded-xl p-6 space-y-4">
             <div className="flex items-start gap-3">
-              <span className="text-eu-blue-500 font-bold mt-0.5">A.</span>
+              <span className="text-brand-400 font-bold mt-0.5">A.</span>
               <div>
                 <p className="font-medium text-gray-900">Select the platform</p>
                 <p className="text-sm text-gray-600">
@@ -67,7 +67,7 @@ export default function HowItWorksPage() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <span className="text-eu-blue-500 font-bold mt-0.5">B.</span>
+              <span className="text-brand-400 font-bold mt-0.5">B.</span>
               <div>
                 <p className="font-medium text-gray-900">Paste the content URL</p>
                 <p className="text-sm text-gray-600">
@@ -76,7 +76,7 @@ export default function HowItWorksPage() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <span className="text-eu-blue-500 font-bold mt-0.5">C.</span>
+              <span className="text-brand-400 font-bold mt-0.5">C.</span>
               <div>
                 <p className="font-medium text-gray-900">Categorize the violation</p>
                 <p className="text-sm text-gray-600">
@@ -86,7 +86,7 @@ export default function HowItWorksPage() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <span className="text-eu-blue-500 font-bold mt-0.5">D.</span>
+              <span className="text-brand-400 font-bold mt-0.5">D.</span>
               <div>
                 <p className="font-medium text-gray-900">Upload evidence</p>
                 <p className="text-sm text-gray-600">
@@ -96,7 +96,7 @@ export default function HowItWorksPage() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <span className="text-eu-blue-500 font-bold mt-0.5">E.</span>
+              <span className="text-brand-400 font-bold mt-0.5">E.</span>
               <div>
                 <p className="font-medium text-gray-900">Assign to your council</p>
                 <p className="text-sm text-gray-600">
@@ -111,7 +111,7 @@ export default function HowItWorksPage() {
       {/* Step 3 */}
       <div className="mb-16">
         <div className="flex items-center gap-4 mb-6">
-          <div className="flex items-center justify-center w-12 h-12 bg-eu-blue-500 text-white text-xl font-bold rounded-full">
+          <div className="flex items-center justify-center w-12 h-12 bg-brand-400 text-white text-xl font-bold rounded-full">
             3
           </div>
           <h2 className="text-2xl font-bold text-gray-900">Coordinated EU Action</h2>
@@ -148,7 +148,7 @@ export default function HowItWorksPage() {
       </div>
 
       {/* CTA */}
-      <div className="bg-eu-blue-500 text-white rounded-2xl p-10 text-center">
+      <div className="bg-brand-400 text-white rounded-2xl p-10 text-center">
         <h2 className="text-2xl font-bold mb-3">Ready to Start?</h2>
         <p className="text-blue-100 mb-6 max-w-lg mx-auto">
           Create a free account and join a Resilience Council today.
@@ -157,7 +157,7 @@ export default function HowItWorksPage() {
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link
             href="/register"
-            className="bg-eu-yellow-500 text-eu-blue-500 font-bold px-8 py-3 rounded-lg hover:bg-eu-yellow-400 transition-colors"
+            className="bg-gold-500 text-brand-400 font-bold px-8 py-3 rounded-lg hover:bg-gold-400 transition-colors"
           >
             Create Account
           </Link>

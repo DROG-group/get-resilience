@@ -4,11 +4,11 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-eu-blue-500 text-white py-20 lg:py-28">
+      <section className="bg-brand-400 text-white py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
             From Screenshot to Legal Action
-            <span className="block text-eu-yellow-500 mt-2">In Three Clicks</span>
+            <span className="block text-gold-500 mt-2">In Three Clicks</span>
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto">
             Join Resilience Councils to coordinate reports of platform violations
@@ -17,7 +17,7 @@ export default function HomePage() {
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/register"
-              className="bg-eu-yellow-500 text-eu-blue-500 font-bold px-8 py-3.5 rounded-lg text-lg hover:bg-eu-yellow-400 transition-colors"
+              className="bg-gold-500 text-brand-400 font-bold px-8 py-3.5 rounded-lg text-lg hover:bg-gold-400 transition-colors"
             >
               Join a Council
             </Link>
@@ -69,7 +69,7 @@ export default function HomePage() {
                   className="text-4xl mb-4"
                   dangerouslySetInnerHTML={{ __html: item.icon }}
                 />
-                <div className="inline-flex items-center justify-center w-8 h-8 bg-eu-blue-500 text-white text-sm font-bold rounded-full mb-3">
+                <div className="inline-flex items-center justify-center w-8 h-8 bg-brand-400 text-white text-sm font-bold rounded-full mb-3">
                   {item.step}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
@@ -103,14 +103,14 @@ export default function HomePage() {
                   'Trusted flaggers status (Art. 22)',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <span className="text-eu-blue-500 mt-0.5">&#10003;</span>
+                    <span className="text-brand-400 mt-0.5">&#10003;</span>
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-eu-blue-50 rounded-2xl p-8">
-              <h3 className="text-xl font-semibold text-eu-blue-500 mb-4">
+            <div className="bg-brand-50 rounded-2xl p-8">
+              <h3 className="text-xl font-semibold text-brand-400 mb-4">
                 Why Collective Action?
               </h3>
               <p className="text-gray-700 mb-4">
@@ -122,7 +122,7 @@ export default function HomePage() {
                 get priority processing. Resilience Councils aim to earn this status
                 through consistent, high-quality reporting.
               </p>
-              <Link href="/about" className="text-eu-blue-500 font-semibold hover:underline">
+              <Link href="/about" className="text-brand-400 font-semibold hover:underline">
                 Learn more about Resilience Councils &rarr;
               </Link>
             </div>
@@ -157,7 +157,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-eu-blue-500 text-white">
+      <section className="py-20 bg-brand-400 text-white">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Hold Platforms Accountable?
@@ -168,7 +168,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/register"
-            className="bg-eu-yellow-500 text-eu-blue-500 font-bold px-10 py-4 rounded-lg text-lg hover:bg-eu-yellow-400 transition-colors inline-block"
+            className="bg-gold-500 text-brand-400 font-bold px-10 py-4 rounded-lg text-lg hover:bg-gold-400 transition-colors inline-block"
           >
             Create Your Free Account
           </Link>

@@ -34,7 +34,7 @@ export default function ReportCard({ report }: { report: Report }) {
             href={report.content_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-eu-blue-500 hover:underline"
+            className="text-brand-400 hover:underline"
           >
             View content
           </a>
