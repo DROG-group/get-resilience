@@ -7,11 +7,11 @@ export default function CouncilCard({ council }: { council: Council }) {
     <Link href={`/councils/${council.id}`} className="card p-6 block">
       <div className="flex items-start justify-between">
         <div className="flex-1 min-w-0">
-          <h3 className="text-lg font-semibold text-dark-50 truncate">{council.name}</h3>
-          <p className="text-sm text-brand-300 mt-1">{getCountryName(council.country)}</p>
+          <h3 className="text-lg font-semibold text-dark truncate">{council.name}</h3>
+          <p className="text-sm text-brand-400 mt-1">{getCountryName(council.country)}</p>
         </div>
         {council.focus_area && (
-          <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-brand-400/10 text-brand-300 whitespace-nowrap">
+          <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-brand-50 text-brand-700 whitespace-nowrap">
             {council.focus_area}
           </span>
         )}

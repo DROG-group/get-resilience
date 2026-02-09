@@ -12,7 +12,7 @@ export default function ReportCard({ report }: { report: Report }) {
     <div className="card p-6">
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
-          <h3 className="text-lg font-semibold text-dark-50 truncate">{report.title}</h3>
+          <h3 className="text-lg font-semibold text-dark truncate">{report.title}</h3>
           <div className="flex items-center gap-2 mt-2 flex-wrap">
             <StatusBadge status={report.status} />
             <ViolationTypeBadge type={report.violation_type} />
@@ -34,7 +34,7 @@ export default function ReportCard({ report }: { report: Report }) {
             href={report.content_url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-brand-300 hover:underline"
+            className="text-brand-400 hover:text-brand-300"
           >
             View content
           </a>

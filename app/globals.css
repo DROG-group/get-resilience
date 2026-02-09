@@ -11,11 +11,11 @@
   --color-purple-light: #a99fff;
   --color-gold: #d4a000;
   --color-muted: #71717a;
-  --color-border: #27272a;
+  --color-border: rgba(0,0,0,0.08);
 }
 
 body {
-  @apply bg-dark text-dark-100 antialiased;
+  @apply bg-[#fafafa] text-dark antialiased;
   font-family: 'Inter', system-ui, sans-serif;
 }
 
@@ -26,26 +26,26 @@ h1, h2, h3, h4 {
 
 @layer components {
   .btn-primary {
-    @apply bg-brand-400 hover:bg-brand-500 text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-200 inline-flex items-center justify-center;
+    @apply bg-dark hover:bg-brand-400 text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-200 inline-flex items-center justify-center;
   }
 
   .btn-secondary {
-    @apply bg-transparent hover:bg-white/5 text-dark-100 font-semibold py-2.5 px-6 rounded-lg border border-dark-700 hover:border-dark-400 transition-all duration-200 inline-flex items-center justify-center;
+    @apply bg-transparent hover:bg-dark hover:text-white text-dark font-semibold py-2.5 px-6 rounded-full border-2 border-dark transition-all duration-200 inline-flex items-center justify-center;
   }
 
   .btn-danger {
-    @apply bg-red-600 hover:bg-red-700 text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-200 inline-flex items-center justify-center;
+    @apply bg-red-600 hover:bg-red-700 text-white font-semibold py-2.5 px-6 rounded-full transition-all duration-200 inline-flex items-center justify-center;
   }
 
   .card {
-    @apply bg-dark-800 rounded-xl border border-dark-700 hover:border-dark-600 transition-all duration-200;
+    @apply bg-white rounded-xl border border-black/[0.08] transition-all duration-200 hover:border-brand-400 hover:shadow-[0_20px_40px_rgba(107,76,230,0.1)] hover:-translate-y-1;
   }
 
   .input-field {
-    @apply w-full px-4 py-2.5 bg-dark-800 border border-dark-700 rounded-lg text-dark-100 placeholder:text-dark-400 focus:ring-2 focus:ring-brand-400 focus:border-brand-400 outline-none transition-all duration-200;
+    @apply w-full px-4 py-2.5 bg-white border border-black/[0.08] rounded-lg text-dark placeholder:text-dark-400 focus:ring-2 focus:ring-brand-400 focus:border-brand-400 outline-none transition-all duration-200;
   }
 
   .label {
-    @apply block text-sm font-medium text-dark-300 mb-1;
+    @apply block text-sm font-medium text-dark mb-1;
   }
 }

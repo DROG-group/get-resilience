@@ -31,7 +31,7 @@ export default function FileUpload({ onFilesSelected, maxFiles = 5, accept = 'im
     <div>
       <div
         className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors ${
-          dragActive ? 'border-brand-400 bg-brand-400/10' : 'border-dark-700 hover:border-dark-500'
+          dragActive ? 'border-brand-400 bg-brand-50' : 'border-black/[0.08] hover:border-brand-300'
         }`}
         onClick={() => inputRef.current?.click()}
         onDragOver={(e) => { e.preventDefault(); setDragActive(true) }}
@@ -48,7 +48,7 @@ export default function FileUpload({ onFilesSelected, maxFiles = 5, accept = 'im
         <p className="text-sm text-dark-400">
           Drop screenshots here or <span className="text-brand-400 font-medium">browse</span>
         </p>
-        <p className="text-xs text-dark-500 mt-1">
+        <p className="text-xs text-dark-400 mt-1">
           Images or PDF, max {maxFiles} files
         </p>
         <input
@@ -64,12 +64,12 @@ export default function FileUpload({ onFilesSelected, maxFiles = 5, accept = 'im
       {files.length > 0 && (
         <ul className="mt-3 space-y-2">
           {files.map((file, i) => (
-            <li key={i} className="flex items-center justify-between bg-dark-700 rounded-lg px-3 py-2 text-sm">
-              <span className="truncate text-dark-200">{file.name}</span>
+            <li key={i} className="flex items-center justify-between bg-[#f5f5f7] rounded-lg px-3 py-2 text-sm">
+              <span className="truncate text-dark">{file.name}</span>
               <button
                 type="button"
                 onClick={() => removeFile(i)}
-                className="text-red-400 hover:text-red-300 ml-2"
+                className="text-red-500 hover:text-red-700 ml-2"
               >
                 &times;
               </button>

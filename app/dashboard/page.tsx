@@ -27,7 +27,7 @@ export default function DashboardPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Welcome */}
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-dark-50">
+        <h1 className="text-3xl font-bold text-dark">
           Welcome back{profile?.full_name ? `, ${profile.full_name}` : ''}
         </h1>
         <p className="text-dark-400 mt-1">
@@ -40,26 +40,26 @@ export default function DashboardPage() {
       <div className="grid sm:grid-cols-3 gap-4 mb-12">
         <Link
           href="/reports/new"
-          className="card p-6 text-center hover:border-brand-400 transition-colors"
+          className="card p-6 text-center"
         >
           <div className="text-3xl mb-2">&#x1F4F8;</div>
-          <h3 className="font-semibold text-dark-50">Submit Report</h3>
+          <h3 className="font-semibold text-dark">Submit Report</h3>
           <p className="text-sm text-dark-400 mt-1">Document a platform violation</p>
         </Link>
         <Link
           href="/councils/create"
-          className="card p-6 text-center hover:border-brand-400 transition-colors"
+          className="card p-6 text-center"
         >
           <div className="text-3xl mb-2">&#x1F3DB;</div>
-          <h3 className="font-semibold text-dark-50">Create Council</h3>
+          <h3 className="font-semibold text-dark">Create Council</h3>
           <p className="text-sm text-dark-400 mt-1">Start a new Resilience Council</p>
         </Link>
         <Link
           href="/councils"
-          className="card p-6 text-center hover:border-brand-400 transition-colors"
+          className="card p-6 text-center"
         >
           <div className="text-3xl mb-2">&#x1F50D;</div>
-          <h3 className="font-semibold text-dark-50">Browse Councils</h3>
+          <h3 className="font-semibold text-dark">Browse Councils</h3>
           <p className="text-sm text-dark-400 mt-1">Find and join existing councils</p>
         </Link>
       </div>
@@ -67,7 +67,7 @@ export default function DashboardPage() {
       {/* My Councils */}
       <div className="mb-12">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-dark-50">
+          <h2 className="text-xl font-semibold text-dark">
             My Councils ({councils.length})
           </h2>
           <Link href="/councils" className="text-sm text-brand-400 hover:underline">
@@ -95,7 +95,7 @@ export default function DashboardPage() {
       {/* Recent Reports */}
       <div>
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-dark-50">
+          <h2 className="text-xl font-semibold text-dark">
             Recent Reports ({reports.length})
           </h2>
           <Link href="/reports" className="text-sm text-brand-400 hover:underline">

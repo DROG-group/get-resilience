@@ -45,14 +45,14 @@ export default function CreateCouncilPage() {
 
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 className="text-3xl font-bold text-dark-50 mb-2">Create a Resilience Council</h1>
+      <h1 className="text-3xl font-bold text-dark mb-2">Create a Resilience Council</h1>
       <p className="text-dark-400 mb-8">
         Start a new council to coordinate platform accountability in your country or focus area.
       </p>
 
       <form onSubmit={handleSubmit} className="card p-8 space-y-6">
         {error && (
-          <div className="bg-red-900/30 text-red-400 border border-red-800 px-4 py-3 rounded-lg text-sm">{error}</div>
+          <div className="bg-red-50 text-red-700 border border-red-200 px-4 py-3 rounded-lg text-sm">{error}</div>
         )}
 
         <div>
@@ -108,9 +108,9 @@ export default function CreateCouncilPage() {
             id="isPublic"
             checked={isPublic}
             onChange={(e) => setIsPublic(e.target.checked)}
-            className="w-4 h-4 text-brand-400 rounded bg-dark-800 border-dark-700"
+            className="w-4 h-4 text-brand-400 rounded border-black/[0.08] bg-white"
           />
-          <label htmlFor="isPublic" className="text-sm text-dark-300">
+          <label htmlFor="isPublic" className="text-sm text-dark-400">
             Public council (anyone can find and join)
           </label>
         </div>

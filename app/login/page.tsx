@@ -33,7 +33,7 @@ function LoginForm() {
   return (
     <form onSubmit={handleSubmit} className="card p-8 space-y-5">
       {error && (
-        <div className="bg-red-900/30 text-red-400 border border-red-800 px-4 py-3 rounded-lg text-sm">
+        <div className="bg-red-50 text-red-700 border border-red-200 px-4 py-3 rounded-lg text-sm">
           {error}
         </div>
       )}
@@ -83,7 +83,7 @@ export default function LoginPage() {
     <div className="min-h-[80vh] flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-dark-50">Welcome Back</h1>
+          <h1 className="text-3xl font-bold text-dark">Welcome Back</h1>
           <p className="text-dark-400 mt-2">Sign in to your Get Resilience account</p>
         </div>
         <Suspense fallback={<div className="text-center py-8 text-dark-400">Loading...</div>}>

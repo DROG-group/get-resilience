@@ -14,7 +14,7 @@ export default function ReportsPage() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-dark-50">My Reports</h1>
+          <h1 className="text-3xl font-bold text-dark">My Reports</h1>
           <p className="text-dark-400 mt-1">Track your submitted violation reports</p>
         </div>
         <Link href="/reports/new" className="btn-primary whitespace-nowrap">
@@ -27,7 +27,7 @@ export default function ReportsPage() {
         <button
           onClick={() => setStatusFilter('')}
           className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-            !statusFilter ? 'bg-brand-400 text-white' : 'bg-dark-800 text-dark-400 hover:bg-dark-700'
+            !statusFilter ? 'bg-dark text-white' : 'bg-[#f5f5f7] text-dark-400 hover:text-dark'
           }`}
         >
           All
@@ -38,8 +38,8 @@ export default function ReportsPage() {
             onClick={() => setStatusFilter(status.id)}
             className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
               statusFilter === status.id
-                ? 'bg-brand-400 text-white'
-                : 'bg-dark-800 text-dark-400 hover:bg-dark-700'
+                ? 'bg-dark text-white'
+                : 'bg-[#f5f5f7] text-dark-400 hover:text-dark'
             }`}
           >
             {status.name}

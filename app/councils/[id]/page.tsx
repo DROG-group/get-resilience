@@ -53,7 +53,7 @@ export default function CouncilDetailPage({ params }: { params: Promise<{ id: st
   if (!council) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-12 text-center">
-        <h1 className="text-2xl font-bold text-dark-50 mb-2">Council not found</h1>
+        <h1 className="text-2xl font-bold text-dark mb-2">Council not found</h1>
         <Link href="/councils" className="text-brand-400 hover:underline">
           Browse all councils
         </Link>
@@ -66,13 +66,13 @@ export default function CouncilDetailPage({ params }: { params: Promise<{ id: st
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-dark-50">{council.name}</h1>
+          <h1 className="text-3xl font-bold text-dark">{council.name}</h1>
           <div className="flex items-center gap-3 mt-2 text-sm text-dark-400">
             <span>{getCountryName(council.country)}</span>
             {council.focus_area && (
               <>
                 <span>&middot;</span>
-                <span className="bg-brand-400/10 text-brand-300 px-2 py-0.5 rounded-full text-xs font-medium">
+                <span className="bg-brand-50 text-brand-700 px-2 py-0.5 rounded-full text-xs font-medium">
                   {council.focus_area}
                 </span>
               </>
@@ -101,7 +101,7 @@ export default function CouncilDetailPage({ params }: { params: Promise<{ id: st
       {/* Description */}
       {council.description && (
         <div className="card p-6 mb-8">
-          <p className="text-dark-300 whitespace-pre-wrap">{council.description}</p>
+          <p className="text-dark-400 whitespace-pre-wrap">{council.description}</p>
         </div>
       )}
 
@@ -123,19 +123,19 @@ export default function CouncilDetailPage({ params }: { params: Promise<{ id: st
 
       {/* Members */}
       <div className="mb-8">
-        <h2 className="text-xl font-semibold text-dark-50 mb-4">
+        <h2 className="text-xl font-semibold text-dark mb-4">
           Members ({members.length})
         </h2>
-        <div className="card divide-y divide-dark-700">
+        <div className="card divide-y divide-black/[0.08]">
           {members.map((member) => (
             <div key={member.id} className="px-4 py-3 flex items-center justify-between">
-              <span className="text-sm text-dark-300">{member.user_id.slice(0, 8)}...</span>
+              <span className="text-sm text-dark-400">{member.user_id.slice(0, 8)}...</span>
               <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
                 member.role === 'admin'
-                  ? 'bg-brand-900/50 text-brand-300'
+                  ? 'bg-brand-100 text-brand-700'
                   : member.role === 'moderator'
-                  ? 'bg-amber-900/30 text-amber-400'
-                  : 'bg-dark-700 text-dark-300'
+                  ? 'bg-amber-100 text-amber-700'
+                  : 'bg-gray-100 text-dark-400'
               }`}>
                 {member.role}
               </span>
@@ -147,7 +147,7 @@ export default function CouncilDetailPage({ params }: { params: Promise<{ id: st
       {/* Reports */}
       {reports.length > 0 && (
         <div>
-          <h2 className="text-xl font-semibold text-dark-50 mb-4">
+          <h2 className="text-xl font-semibold text-dark mb-4">
             Reports ({reports.length})
           </h2>
           <div className="space-y-4">

@@ -1,12 +1,12 @@
 import { REPORT_STATUSES } from '@/lib/constants'
 
 const colorMap: Record<string, string> = {
-  gray: 'bg-dark-700 text-dark-300',
-  blue: 'bg-blue-900/30 text-blue-400',
-  yellow: 'bg-amber-900/30 text-amber-400',
-  purple: 'bg-purple-900/30 text-purple-400',
-  green: 'bg-green-900/30 text-green-400',
-  red: 'bg-red-900/30 text-red-400',
+  gray: 'bg-gray-100 text-gray-700',
+  blue: 'bg-blue-100 text-blue-700',
+  yellow: 'bg-amber-100 text-amber-700',
+  purple: 'bg-purple-100 text-purple-700',
+  green: 'bg-green-100 text-green-700',
+  red: 'bg-red-100 text-red-700',
 }
 
 export default function StatusBadge({ status }: { status: string }) {

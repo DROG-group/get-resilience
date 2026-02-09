@@ -1,12 +1,12 @@
 import { VIOLATION_TYPES } from '@/lib/constants'
 
 const colorMap: Record<string, string> = {
-  disinformation: 'bg-orange-900/30 text-orange-400',
-  hate_speech: 'bg-red-900/30 text-red-400',
-  illegal_content: 'bg-red-900/30 text-red-300',
-  manipulation: 'bg-purple-900/30 text-purple-400',
-  transparency_violation: 'bg-amber-900/30 text-amber-400',
-  other: 'bg-dark-700 text-dark-300',
+  disinformation: 'bg-orange-100 text-orange-700',
+  hate_speech: 'bg-red-100 text-red-700',
+  illegal_content: 'bg-red-50 text-red-800',
+  manipulation: 'bg-purple-100 text-purple-700',
+  transparency_violation: 'bg-amber-100 text-amber-700',
+  other: 'bg-gray-100 text-gray-700',
 }
 
 export default function ViolationTypeBadge({ type }: { type: string }) {
