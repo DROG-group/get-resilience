@@ -1,0 +1,28 @@
+{
+  "name": "get-resilience",
+  "version": "1.0.0",
+  "description": "Get Resilience - EU Resilience Councils Platform",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "author": "SAUFEX",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.93.0",
+    "@types/node": "^25.0.10",
+    "@types/react": "^19.2.9",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.23",
+    "date-fns": "^4.1.0",
+    "next": "^16.1.5",
+    "postcss": "^8.5.6",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.3"
+  }
+}
