@@ -1,11 +1,11 @@
 import Link from 'next/link'
+import { IconUsers, IconCamera, IconSend, IconScale, IconShield, IconGlobe, IconDocument, IconChart, IconArrowDown, IconCheck, IconX, IconPerson, IconFlag } from '@/components/Icons'
 
 export default function HomePage() {
   return (
     <div>
       {/* Hero */}
       <section className="relative bg-[#fafafa] py-20 lg:py-28 overflow-hidden">
-        {/* Radial gradient overlays */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(139,127,245,0.08),_transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(212,160,0,0.04),_transparent_50%)]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -13,9 +13,8 @@ export default function HomePage() {
             From Screenshot to Legal Action
             <span className="block text-brand-400 mt-2">In Three Clicks</span>
           </h1>
-          <p className="mt-6 text-lg sm:text-xl text-dark-400 max-w-3xl mx-auto">
-            You have the law. We handle the bureaucracy. Join a Resilience Council
-            and amplify your reports across all 27 EU regulators.
+          <p className="mt-6 text-lg sm:text-xl text-dark-400 max-w-2xl mx-auto">
+            Join a Resilience Council. Amplify your reports across all 27 EU regulators.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -28,152 +27,213 @@ export default function HomePage() {
               href="/how-it-works"
               className="bg-transparent hover:bg-dark hover:text-white font-semibold px-8 py-3.5 rounded-full text-lg transition-colors border-2 border-dark text-dark"
             >
-              How It Works
+              See How It Works
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 3-Step Overview */}
+      {/* Visual 3-Step Flow */}
       <section className="py-20 bg-[#f5f5f7]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-dark mb-4">
-            Three Steps to Platform Accountability
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-dark mb-16">
+            How Resilience Councils Work
           </h2>
-          <p className="text-center text-dark-400 mb-12 max-w-2xl mx-auto">
-            Citizen networks documenting platform violations across Europe. The key is coordination and automation.
-          </p>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                step: '1',
-                title: 'Start or Join a Council',
-                description:
-                  'Form a network of citizens in your country or focus area. Councils coordinate collective evidence against platform violations.',
-                icon: '&#x1F3DB;',
-              },
-              {
-                step: '2',
-                title: 'Document Violations',
-                description:
-                  'Use RADAR-compliant structured reporting to document platform violations. Every report is mapped to specific DSA articles for legal precision.',
-                icon: '&#x1F4F8;',
-              },
-              {
-                step: '3',
-                title: 'Coordinated EU Filing',
-                description:
-                  'Your council submits identical evidence to Digital Services Coordinators across all 27 member states simultaneously. Under DSA Articles 51 and 56, regulators must coordinate investigations.',
-                icon: '&#x2696;',
-              },
-            ].map((item) => (
-              <div key={item.step} className="bg-white rounded-xl border border-black/[0.08] p-8 text-center hover:border-brand-400 hover:shadow-[0_20px_40px_rgba(107,76,230,0.1)] hover:-translate-y-1 transition-all duration-200">
-                <div
-                  className="text-4xl mb-4"
-                  dangerouslySetInnerHTML={{ __html: item.icon }}
-                />
-                <div className="inline-flex items-center justify-center w-8 h-8 bg-brand-400 text-white text-sm font-bold rounded-full mb-3">
-                  {item.step}
+
+          {/* Step 1 */}
+          <div className="flex flex-col md:flex-row items-center gap-8 mb-6">
+            <div className="flex-shrink-0 w-20 h-20 bg-brand-400 rounded-2xl flex items-center justify-center">
+              <IconUsers className="w-10 h-10 text-white" />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <div className="text-xs font-bold text-brand-400 uppercase tracking-wider mb-1">Step 1</div>
+              <h3 className="text-xl font-bold text-dark mb-1">Join or Create a Council</h3>
+              <p className="text-dark-400">
+                Pick your country, choose a focus area. You&apos;re in.
+              </p>
+            </div>
+            <div className="hidden md:grid grid-cols-3 gap-3 flex-shrink-0">
+              {['Netherlands', 'Poland', 'Finland'].map((c) => (
+                <div key={c} className="bg-white rounded-lg px-3 py-2 text-xs font-medium text-dark border border-black/[0.06] text-center">
+                  {c}
                 </div>
-                <h3 className="text-xl font-semibold text-dark mb-2">{item.title}</h3>
-                <p className="text-dark-400">{item.description}</p>
+              ))}
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className="flex justify-center md:justify-start md:ml-10 my-2">
+            <IconArrowDown className="w-6 h-6 text-brand-300" />
+          </div>
+
+          {/* Step 2 */}
+          <div className="flex flex-col md:flex-row items-center gap-8 mb-6">
+            <div className="flex-shrink-0 w-20 h-20 bg-dark rounded-2xl flex items-center justify-center">
+              <IconCamera className="w-10 h-10 text-white" />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <div className="text-xs font-bold text-brand-400 uppercase tracking-wider mb-1">Step 2</div>
+              <h3 className="text-xl font-bold text-dark mb-1">Document the Violation</h3>
+              <p className="text-dark-400">
+                Screenshot it, paste the URL, categorize it. The system maps it to DSA articles automatically.
+              </p>
+            </div>
+            <div className="hidden md:flex gap-2 flex-shrink-0">
+              {[
+                { icon: IconCamera, label: 'Screenshot' },
+                { icon: IconDocument, label: 'DSA Map' },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="bg-white rounded-lg px-3 py-2 flex items-center gap-2 border border-black/[0.06]">
+                  <Icon className="w-4 h-4 text-brand-400" />
+                  <span className="text-xs font-medium text-dark">{label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Arrow */}
+          <div className="flex justify-center md:justify-start md:ml-10 my-2">
+            <IconArrowDown className="w-6 h-6 text-brand-300" />
+          </div>
+
+          {/* Step 3 */}
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            <div className="flex-shrink-0 w-20 h-20 bg-brand-400 rounded-2xl flex items-center justify-center">
+              <IconSend className="w-10 h-10 text-white" />
+            </div>
+            <div className="flex-1 text-center md:text-left">
+              <div className="text-xs font-bold text-brand-400 uppercase tracking-wider mb-1">Step 3</div>
+              <h3 className="text-xl font-bold text-dark mb-1">Coordinated EU Filing</h3>
+              <p className="text-dark-400">
+                Your council submits identical evidence to all 27 EU regulators at once. They <em>must</em> investigate.
+              </p>
+            </div>
+            <div className="hidden md:block flex-shrink-0">
+              <div className="bg-white rounded-xl p-3 border border-black/[0.06]">
+                <div className="grid grid-cols-9 gap-1">
+                  {Array.from({ length: 27 }).map((_, i) => (
+                    <div key={i} className="w-3 h-3 rounded-sm bg-brand-400/80" />
+                  ))}
+                </div>
+                <p className="text-[10px] text-dark-400 text-center mt-1.5">27 member states</p>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* DSA Explainer */}
+      {/* Why Coordination — Visual Comparison */}
       <section className="py-20 bg-[#fafafa]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-dark mb-6">
-                The Digital Services Act: Your Legal Leverage
-              </h2>
-              <p className="text-dark-400 mb-4">
-                The EU Digital Services Act (DSA) is the most comprehensive platform regulation
-                in the world. It requires Very Large Online Platforms to be transparent about
-                content moderation and take responsibility for systemic risks. These are the
-                specific articles that give citizens real power:
-              </p>
-              <ul className="space-y-3">
-                {[
-                  'Report illegal content (Art. 16)',
-                  'Trusted flagger priority processing (Art. 22)',
-                  'Content moderation transparency (Art. 24)',
-                  'Ban on dark patterns and deceptive design (Art. 25)',
-                  'Advertising transparency requirements (Art. 26-27)',
-                  'Systemic risk assessment obligations (Art. 34-35)',
-                  'Cross-border coordination between authorities (Art. 51 & 56)',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="text-brand-400 mt-0.5">&#10003;</span>
-                    <span className="text-dark-400">{item}</span>
-                  </li>
-                ))}
-              </ul>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-dark mb-4">
+            Why Coordination Matters
+          </h2>
+          <p className="text-center text-dark-400 mb-12 max-w-xl mx-auto">
+            Individual reports get ignored. Coordinated council submissions trigger mandatory investigations.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Without Council */}
+            <div className="bg-white rounded-2xl border border-black/[0.08] p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
+                  <IconX className="w-5 h-5 text-red-500" />
+                </div>
+                <h3 className="text-lg font-bold text-dark">Without a Council</h3>
+              </div>
+              {/* Visual flow */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#f5f5f7] flex items-center justify-center flex-shrink-0">
+                    <IconPerson className="w-4 h-4 text-dark-400" />
+                  </div>
+                  <div className="flex-1 h-1 bg-[#f5f5f7] rounded" />
+                  <div className="text-xs text-dark-400 bg-[#f5f5f7] rounded-full px-3 py-1">1 report</div>
+                  <div className="flex-1 h-1 bg-[#f5f5f7] rounded" />
+                  <div className="w-8 h-8 rounded-full bg-[#f5f5f7] flex items-center justify-center flex-shrink-0">
+                    <IconFlag className="w-4 h-4 text-dark-400" />
+                  </div>
+                </div>
+                <div className="text-center">
+                  <span className="inline-block bg-red-50 text-red-600 text-xs font-semibold px-3 py-1 rounded-full">
+                    Easily dismissed
+                  </span>
+                </div>
+              </div>
             </div>
-            <div className="bg-[#f5f5f7] rounded-2xl p-8">
-              <h3 className="text-xl font-semibold text-brand-400 mb-4">
-                Why Coordination Matters
-              </h3>
-              <p className="text-dark-400 mb-4">
-                Individual reports can be dismissed. But when councils submit matching
-                structured evidence to Digital Services Coordinators across multiple member
-                states simultaneously, regulators are legally obligated to investigate and
-                coordinate under DSA Articles 51 and 56.
-              </p>
-              <p className="text-dark-400 mb-4">
-                Poland&apos;s Resilience Council &mdash; the first in the EU &mdash; has proven
-                this model works. When multiple national authorities receive credible reports
-                of the same violation, they must coordinate investigations. Your evidence
-                creates public records that strengthen future enforcement actions, compensation
-                claims, and regulatory pressure campaigns.
-              </p>
-              <Link href="/about" className="text-brand-400 font-semibold hover:text-brand-300 transition-colors">
-                Learn more about Resilience Councils &rarr;
-              </Link>
+
+            {/* With Council */}
+            <div className="bg-white rounded-2xl border-2 border-brand-400 p-8 shadow-[0_20px_40px_rgba(107,76,230,0.1)]">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center">
+                  <IconCheck className="w-5 h-5 text-brand-400" />
+                </div>
+                <h3 className="text-lg font-bold text-dark">With a Council</h3>
+              </div>
+              {/* Visual flow */}
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex -space-x-2 flex-shrink-0">
+                    {[1, 2, 3].map((i) => (
+                      <div key={i} className="w-8 h-8 rounded-full bg-brand-100 border-2 border-white flex items-center justify-center">
+                        <IconPerson className="w-4 h-4 text-brand-400" />
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex-1 h-1 bg-brand-100 rounded" />
+                  <div className="text-xs text-brand-600 bg-brand-50 rounded-full px-3 py-1 font-medium">27 filings</div>
+                  <div className="flex-1 h-1 bg-brand-100 rounded" />
+                  <div className="flex -space-x-1.5 flex-shrink-0">
+                    {[1, 2, 3].map((i) => (
+                      <div key={i} className="w-6 h-6 rounded-sm bg-brand-400/80 border border-white" />
+                    ))}
+                  </div>
+                </div>
+                <div className="text-center">
+                  <span className="inline-block bg-brand-50 text-brand-600 text-xs font-semibold px-3 py-1 rounded-full">
+                    Mandatory investigation (DSA Art. 51 &amp; 56)
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Feature Cards */}
+      {/* Features — Icon Grid */}
       <section className="py-20 bg-[#f5f5f7]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-dark mb-12">
             Built for Effective Reporting
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { title: 'DSA-Compliant Reporting', desc: 'RADAR.CheckFirst structured data ensuring compliance with DSA documentation requirements', icon: '&#x1F4DC;' },
-              { title: 'Evidence Archive', desc: 'Creates a persistent public record that strengthens future enforcement actions and compensation claims', icon: '&#x1F4CE;' },
-              { title: 'Cross-Border Coordination', desc: 'Automated filing across all 27 EU member states for maximum regulatory pressure', icon: '&#x1F1EA;&#x1F1FA;' },
-              { title: 'Resilience Council Network', desc: 'Join the European network alongside Poland\u2019s pioneering council, the first in the EU', icon: '&#x1F91D;' },
-            ].map((feature) => (
-              <div key={feature.title} className="bg-white rounded-xl border border-black/[0.08] p-6 hover:border-brand-400 hover:shadow-[0_20px_40px_rgba(107,76,230,0.1)] hover:-translate-y-1 transition-all duration-200">
-                <div
-                  className="text-3xl mb-3"
-                  dangerouslySetInnerHTML={{ __html: feature.icon }}
-                />
-                <h3 className="font-semibold text-dark mb-1">{feature.title}</h3>
-                <p className="text-sm text-dark-400">{feature.desc}</p>
+              { icon: IconDocument, title: 'DSA-Compliant', desc: 'Auto-mapped to DSA articles using RADAR.CheckFirst' },
+              { icon: IconShield, title: 'Evidence Archive', desc: 'Permanent record for enforcement and compensation claims' },
+              { icon: IconGlobe, title: 'Cross-Border', desc: 'Simultaneous filing across all 27 EU member states' },
+              { icon: IconUsers, title: 'Council Network', desc: 'Join the European network led by Poland\u2019s first council' },
+            ].map(({ icon: Icon, title, desc }) => (
+              <div key={title} className="bg-white rounded-xl border border-black/[0.08] p-6 text-center hover:border-brand-400 hover:shadow-[0_20px_40px_rgba(107,76,230,0.1)] hover:-translate-y-1 transition-all duration-200">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-brand-50 rounded-xl mb-4">
+                  <Icon className="w-6 h-6 text-brand-400" />
+                </div>
+                <h3 className="font-semibold text-dark mb-1">{title}</h3>
+                <p className="text-sm text-dark-400">{desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Stats Bar */}
+      {/* Stats */}
       <section className="py-12 bg-[#fafafa]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
-              { value: '6', label: 'Partner Organizations' },
-              { value: '5', label: 'Countries Active' },
+              { value: '6', label: 'Partners' },
+              { value: '5', label: 'Countries' },
               { value: '170+', label: 'Research Articles' },
-              { value: '27', label: 'EU Member States' },
+              { value: '27', label: 'EU States' },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="text-3xl sm:text-4xl font-extrabold text-brand-400">{stat.value}</div>
@@ -191,8 +251,7 @@ export default function HomePage() {
             Ready to Hold Platforms Accountable?
           </h2>
           <p className="text-white/70 text-lg mb-8">
-            Join thousands of EU citizens using the Digital Services Act to fight
-            information manipulation and protect democratic discourse.
+            Join EU citizens using the Digital Services Act to fight disinformation.
           </p>
           <Link
             href="/register"
