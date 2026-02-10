@@ -41,6 +41,29 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Title, platform, and violation type are required' }, { status: 400 })
   }
 
+  // Check EMOD training completion (resilience-council certification path)
+  const { data: requiredCourses } = await supabase
+    .from('plus_courses')
+    .select('id')
+    .eq('certification_path', 'resilience-council')
+    .eq('status', 'published')
+
+  if (requiredCourses && requiredCourses.length > 0) {
+    const { data: certs } = await supabase
+      .from('plus_certificates')
+      .select('id')
+      .eq('user_id', user.id)
+      .in('course_id', requiredCourses.map(c => c.id))
+
+    const completedCount = certs?.length || 0
+    if (completedCount < requiredCourses.length) {
+      return NextResponse.json(
+        { error: 'You must complete the required DSA reporting training on EMOD+ before submitting reports.' },
+        { status: 403 }
+      )
+    }
+  }
+
   // If council_id provided, verify user is a member
   if (council_id) {
     const { data: membership } = await supabase
