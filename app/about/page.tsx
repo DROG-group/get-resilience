@@ -17,7 +17,7 @@ export default function AboutPage() {
         </div>
       </ScrollReveal>
 
-      {/* Why GetResilience Exists — 3 visual cards */}
+      {/* Why GetResilience Exists - 3 visual cards */}
       <div className="mb-16">
         <ScrollReveal>
           <h2 className="text-2xl font-bold text-dark mb-8">Why This Platform Exists</h2>
@@ -78,7 +78,7 @@ export default function AboutPage() {
         <ScrollReveal>
           <h2 className="text-2xl font-bold text-dark mb-4">What Are Resilience Councils?</h2>
           <p className="text-dark-400 mb-8">
-            Citizen-led governance bodies that coordinate disinformation reports using a &ldquo;whole-of-society&rdquo; approach &mdash;
+            Citizen-led governance bodies that coordinate disinformation reports using a &ldquo;whole-of-society&rdquo; approach,
             bringing together citizens, civil society, media, researchers, and policymakers.
           </p>
         </ScrollReveal>
@@ -167,7 +167,7 @@ export default function AboutPage() {
             <a href="https://saufex.eu" target="_blank" rel="noopener noreferrer" className="text-brand-400 hover:text-brand-300 font-medium">
               SAUFEX
             </a>
-            {' '}(Secure Automated Unified Framework for Exchange) &mdash; a Horizon Europe-funded consortium
+            {' '}(Secure Automated Unified Framework for Exchange), a Horizon Europe-funded consortium
             developing a unified democratic framework for detecting, analyzing, and countering foreign
             information manipulation across EU member states.
           </p>
@@ -240,10 +240,10 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-dark text-lg mb-2">EMOD &mdash; European Master of Countering Disinformation</h3>
+                <h3 className="font-bold text-dark text-lg mb-2">EMOD: European Master of Countering Disinformation</h3>
                 <p className="text-dark-400 text-sm mb-4">
                   A free e-learning platform with 64 modules across 10 learning paths, totaling 19+ hours of
-                  evidence-based content. Self-paced modules designed for 8&ndash;10 minute completion.
+                  evidence-based content. Self-paced modules designed for 8-10 minute completion.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-4 mb-4">

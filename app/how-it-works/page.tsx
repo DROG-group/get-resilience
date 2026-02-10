@@ -42,7 +42,7 @@ export default function HowItWorksPage() {
 
           <div className="ml-0 md:ml-[84px]">
             <p className="text-dark-400 mb-6">
-              Councils bring together citizens around a common concern &mdash; election interference,
+              Councils bring together citizens around a common concern: election interference,
               climate disinformation, health misinformation, or foreign information operations.
             </p>
 
@@ -196,13 +196,13 @@ export default function HowItWorksPage() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    'Art. 16 \u2014 Report illegal content',
-                    'Art. 22 \u2014 Trusted flaggers',
-                    'Art. 24 \u2014 Transparency obligations',
-                    'Art. 25 \u2014 Dark patterns prohibition',
-                    'Art. 26 \u2014 Advertising transparency',
-                    'Art. 34 \u2014 Systemic risk assessment',
-                    'Art. 51 \u2014 Cross-border coordination',
+                    'Art. 16 - Report illegal content',
+                    'Art. 22 - Trusted flaggers',
+                    'Art. 24 - Transparency obligations',
+                    'Art. 25 - Dark patterns prohibition',
+                    'Art. 26 - Advertising transparency',
+                    'Art. 34 - Systemic risk assessment',
+                    'Art. 51 - Cross-border coordination',
                   ].map((art) => (
                     <span key={art} className="inline-flex items-center gap-1.5 bg-[#f5f5f7] rounded-full px-3 py-1.5 text-xs font-medium text-dark">
                       <IconScale className="w-3 h-3 text-brand-400" />
@@ -222,7 +222,7 @@ export default function HowItWorksPage() {
                     <h3 className="font-semibold text-dark text-sm mb-1">Permanent Evidence Archive</h3>
                     <p className="text-xs text-dark-400 leading-relaxed">
                       Disinformation content often gets deleted once flagged. GetResilience creates a permanent record
-                      with screenshots, URLs, and metadata &mdash; essential for enforcement proceedings.
+                      with screenshots, URLs, and metadata. This is essential for enforcement proceedings.
                     </p>
                   </div>
                 </div>

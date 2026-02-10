@@ -22,7 +22,7 @@ export default function HomePage() {
           </ScrollReveal>
           <ScrollReveal delay={100}>
             <p className="mt-6 text-lg sm:text-xl text-dark-400 max-w-3xl mx-auto">
-              The EU&apos;s Digital Services Act gives citizens the legal tools to fight disinformation &mdash;
+              The EU&apos;s Digital Services Act gives citizens the legal tools to fight disinformation,
               but only if reports are coordinated. GetResilience makes that coordination automatic.
             </p>
           </ScrollReveal>
@@ -112,7 +112,7 @@ export default function HomePage() {
                   <ul className="space-y-2 text-sm text-dark-400">
                     <li className="flex items-start gap-2">
                       <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
-                      <span><strong>Art. 16:</strong> Report illegal content directly to platforms &mdash; they must act</span>
+                      <span><strong>Art. 16:</strong> Report illegal content directly to platforms, and they must act</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
@@ -187,7 +187,7 @@ export default function HomePage() {
                 <div className="text-xs font-bold text-brand-400 uppercase tracking-wider mb-1">Step 1</div>
                 <h3 className="text-xl font-bold text-dark mb-1">Join or Create a Council</h3>
                 <p className="text-dark-400">
-                  Pick your country and focus area &mdash; election integrity, health misinformation,
+                  Pick your country and focus area: election integrity, health misinformation,
                   climate, or foreign interference. Any EU citizen can start one.
                 </p>
               </div>
@@ -267,7 +267,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Coordination — Visual Comparison */}
+      {/* Why Coordination - Visual Comparison */}
       <section className="py-20 bg-[#f5f5f7]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <ScrollReveal>
@@ -303,7 +303,7 @@ export default function HomePage() {
                   </div>
                   <div className="text-center">
                     <span className="inline-block bg-red-50 text-red-600 text-xs font-semibold px-3 py-1 rounded-full">
-                      Easily dismissed &mdash; no systemic pattern
+                      Easily dismissed, no systemic pattern
                     </span>
                   </div>
                   <p className="text-xs text-dark-400 text-center">
@@ -363,7 +363,7 @@ export default function HomePage() {
               Active Councils Across Europe
             </h2>
             <p className="text-center text-dark-400 mb-10 max-w-2xl mx-auto">
-              The SAUFEX consortium operates across five EU countries. Poland launched the first FIMI Resilience Council in 2024 &mdash; this model is now expanding across the EU.
+              The SAUFEX consortium operates across five EU countries. Poland launched the first FIMI Resilience Council in 2024, and this model is now expanding across the EU.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={200}>
@@ -386,7 +386,7 @@ export default function HomePage() {
               <a href="https://saufex.eu" target="_blank" rel="noopener noreferrer" className="text-brand-400 hover:text-brand-300 font-medium">
                 SAUFEX
               </a>
-              {' '}&mdash; a Horizon Europe-funded consortium building a unified framework for countering information manipulation.
+              , a Horizon Europe-funded consortium building a unified framework for countering information manipulation.
             </p>
           </ScrollReveal>
 
