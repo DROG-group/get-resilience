@@ -66,16 +66,16 @@ export default function DashboardPage() {
               <p className={`text-sm mt-0.5 ${training.completed ? 'text-emerald-700' : 'text-amber-700'}`}>
                 {training.completed
                   ? `You have completed the required training. Certificate: ${training.certificateCode}`
-                  : 'Complete the DSA reporting course on EMOD+ to unlock report submission.'}
+                  : 'Complete the DSA reporting course on EMOD to unlock report submission.'}
               </p>
-              {!training.completed && training.courses.length > 0 && (
+              {!training.completed && (
                 <a
-                  href={`https://emodplus.tactcheck.com/plus/courses/${training.courses[0].id}/learn`}
+                  href="https://emod.saufex.eu/dashboard"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block mt-2 text-sm font-medium text-amber-800 underline hover:no-underline"
                 >
-                  Start training on EMOD+
+                  Start training on EMOD
                 </a>
               )}
             </div>

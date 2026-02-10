@@ -41,27 +41,19 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Title, platform, and violation type are required' }, { status: 400 })
   }
 
-  // Check EMOD training completion (resilience-council certification path)
-  const { data: requiredCourses } = await supabase
-    .from('plus_courses')
+  // Check EMOD training completion (DSA Reporting certificate)
+  const { data: cert } = await supabase
+    .from('certificates')
     .select('id')
-    .eq('certification_path', 'resilience-council')
-    .eq('status', 'published')
+    .eq('user_id', user.id)
+    .eq('learning_path', 'DSA Reporting for Resilience Councils')
+    .maybeSingle()
 
-  if (requiredCourses && requiredCourses.length > 0) {
-    const { data: certs } = await supabase
-      .from('plus_certificates')
-      .select('id')
-      .eq('user_id', user.id)
-      .in('course_id', requiredCourses.map(c => c.id))
-
-    const completedCount = certs?.length || 0
-    if (completedCount < requiredCourses.length) {
-      return NextResponse.json(
-        { error: 'You must complete the required DSA reporting training on EMOD+ before submitting reports.' },
-        { status: 403 }
-      )
-    }
+  if (!cert) {
+    return NextResponse.json(
+      { error: 'You must complete the required DSA reporting training on EMOD before submitting reports.' },
+      { status: 403 }
+    )
   }
 
   // If council_id provided, verify user is a member

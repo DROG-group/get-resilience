@@ -13,7 +13,7 @@ import { useEmodTraining } from '@/hooks/useEmodTraining'
 import { createClient } from '@/lib/supabase/client'
 
 function TrainingGate({ children }: { children: React.ReactNode }) {
-  const { completed, loading, courses } = useEmodTraining()
+  const { completed, loading } = useEmodTraining()
 
   if (loading) {
     return (
@@ -25,8 +25,6 @@ function TrainingGate({ children }: { children: React.ReactNode }) {
   }
 
   if (!completed) {
-    const incompleteCourses = courses.filter(c => !c.completed)
-
     return (
       <div className="card p-8">
         <div className="text-center mb-6">
@@ -37,33 +35,31 @@ function TrainingGate({ children }: { children: React.ReactNode }) {
           </div>
           <h2 className="text-xl font-bold text-dark mb-2">Training Required</h2>
           <p className="text-dark-400 max-w-md mx-auto">
-            Before submitting DSA violation reports, you need to complete the required training
-            on EMOD+. This ensures your reports meet the standards that EU regulators expect.
+            Before submitting DSA violation reports, you need to complete the DSA Reporting
+            course on EMOD. This ensures your reports meet the standards that EU regulators expect.
           </p>
         </div>
 
-        <div className="space-y-3 mb-6">
-          {incompleteCourses.map(course => (
-            <div key={course.id} className="flex items-center gap-4 p-4 bg-amber-50 border border-amber-200 rounded-lg">
-              <div className="w-10 h-10 bg-amber-200 rounded-full flex items-center justify-center flex-shrink-0">
-                <svg className="w-5 h-5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="font-medium text-dark">{course.title}</p>
-                <p className="text-sm text-dark-400">Not yet completed</p>
-              </div>
-              <a
-                href={`https://emodplus.tactcheck.com/plus/courses/${course.id}/learn`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary text-sm whitespace-nowrap"
-              >
-                Start Course
-              </a>
+        <div className="p-4 bg-amber-50 border border-amber-200 rounded-lg mb-6">
+          <div className="flex items-center gap-4">
+            <div className="w-10 h-10 bg-amber-200 rounded-full flex items-center justify-center flex-shrink-0">
+              <svg className="w-5 h-5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
             </div>
-          ))}
+            <div className="flex-1 min-w-0">
+              <p className="font-medium text-dark">DSA Reporting for Resilience Councils</p>
+              <p className="text-sm text-dark-400">12 modules across 5 chapters</p>
+            </div>
+            <a
+              href="https://emod.saufex.eu/dashboard"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary text-sm whitespace-nowrap"
+            >
+              Start Training
+            </a>
+          </div>
         </div>
 
         <div className="text-center">
@@ -72,12 +68,12 @@ function TrainingGate({ children }: { children: React.ReactNode }) {
             best practices. It takes approximately 3 hours to complete.
           </p>
           <a
-            href="https://emodplus.tactcheck.com/plus"
+            href="https://emod.saufex.eu/dashboard"
             target="_blank"
             rel="noopener noreferrer"
             className="text-brand-400 hover:underline text-sm"
           >
-            View all available courses on EMOD+
+            View all learning paths on EMOD
           </a>
         </div>
       </div>
