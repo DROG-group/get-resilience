@@ -169,16 +169,28 @@ export default function EuropeMap() {
                 stroke={isActive ? '#6b5fd4' : '#d4d4d8'}
                 strokeWidth={isActive ? 1.5 : 0.5}
                 strokeLinejoin="round"
+                style={{ transition: 'fill 300ms ease' }}
               />
               {isActive && (
-                <path
-                  d={c.path}
-                  fill="none"
-                  stroke="#8b7ff5"
-                  strokeWidth={3}
-                  strokeOpacity={0.2}
-                  strokeLinejoin="round"
-                />
+                <>
+                  <path
+                    d={c.path}
+                    fill="none"
+                    stroke="#8b7ff5"
+                    strokeWidth={3}
+                    strokeOpacity={0.2}
+                    strokeLinejoin="round"
+                  />
+                  <circle cx={c.cx} cy={c.cy} r={4} fill="#8b7ff5" />
+                  <circle
+                    cx={c.cx} cy={c.cy} r={4}
+                    fill="none" stroke="#8b7ff5" strokeWidth={1.5}
+                    style={{
+                      animation: 'pulse-ring 2s ease-out infinite',
+                      transformOrigin: `${c.cx}px ${c.cy}px`,
+                    }}
+                  />
+                </>
               )}
             </g>
           )
