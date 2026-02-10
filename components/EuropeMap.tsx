@@ -2,25 +2,33 @@
 
 import { useState } from 'react'
 
+type CouncilInfo = {
+  council: string
+  members: number
+  reports: number
+  partner: string
+}
+
 type Country = {
   id: string
   name: string
   x: number
   y: number
   active?: boolean
+  info?: CouncilInfo
 }
 
 const countries: Country[] = [
-  { id: 'FI', name: 'Finland', x: 342, y: 52, active: true },
+  { id: 'FI', name: 'Finland', x: 342, y: 52, active: true, info: { council: 'Faktabaari Council', members: 24, reports: 18, partner: 'Faktabaari' } },
   { id: 'SE', name: 'Sweden', x: 272, y: 72 },
   { id: 'EE', name: 'Estonia', x: 340, y: 110 },
   { id: 'LV', name: 'Latvia', x: 336, y: 131 },
-  { id: 'LT', name: 'Lithuania', x: 332, y: 152, active: true },
+  { id: 'LT', name: 'Lithuania', x: 332, y: 152, active: true, info: { council: 'Debunk Council', members: 31, reports: 42, partner: 'Debunk.org' } },
   { id: 'DK', name: 'Denmark', x: 198, y: 136 },
   { id: 'IE', name: 'Ireland', x: 56, y: 162 },
-  { id: 'NL', name: 'Netherlands', x: 160, y: 168, active: true },
+  { id: 'NL', name: 'Netherlands', x: 160, y: 168, active: true, info: { council: 'DROG Council', members: 45, reports: 67, partner: 'DROG' } },
   { id: 'DE', name: 'Germany', x: 213, y: 184 },
-  { id: 'PL', name: 'Poland', x: 290, y: 176, active: true },
+  { id: 'PL', name: 'Poland', x: 290, y: 176, active: true, info: { council: 'Poland Pilot Council', members: 38, reports: 53, partner: 'PORT Lukasiewicz' } },
   { id: 'BE', name: 'Belgium', x: 160, y: 190 },
   { id: 'CZ', name: 'Czechia', x: 252, y: 203 },
   { id: 'LU', name: 'Lux.', x: 160, y: 210 },
@@ -137,7 +145,7 @@ export default function EuropeMap() {
               </text>
 
               {/* Country name label for active */}
-              {isActive && (
+              {isActive && !isHovered && (
                 <text
                   x={c.x}
                   y={c.y + TILE_H / 2 + 12}
@@ -151,6 +159,79 @@ export default function EuropeMap() {
                   {c.name}
                 </text>
               )}
+
+              {/* Rich tooltip for active countries on hover */}
+              {isHovered && isActive && c.info && (() => {
+                const tw = 120
+                const th = 58
+                const tx = Math.min(Math.max(c.x - tw / 2, 4), 450 - tw - 4)
+                const ty = c.y - TILE_H / 2 - th - 8
+                return (
+                  <>
+                    <rect
+                      x={tx}
+                      y={ty}
+                      width={tw}
+                      height={th}
+                      rx={6}
+                      fill="#0a0a0f"
+                      fillOpacity={0.95}
+                    />
+                    {/* Arrow */}
+                    <polygon
+                      points={`${c.x - 4},${ty + th} ${c.x + 4},${ty + th} ${c.x},${ty + th + 5}`}
+                      fill="#0a0a0f"
+                      fillOpacity={0.95}
+                    />
+                    {/* Council name */}
+                    <text
+                      x={tx + 8}
+                      y={ty + 13}
+                      fontSize={7.5}
+                      fontWeight={700}
+                      fill="#ffffff"
+                      fontFamily="Inter, system-ui, sans-serif"
+                      style={{ pointerEvents: 'none' }}
+                    >
+                      {c.info.council}
+                    </text>
+                    {/* Partner */}
+                    <text
+                      x={tx + 8}
+                      y={ty + 24}
+                      fontSize={6.5}
+                      fill="#a1a1aa"
+                      fontFamily="Inter, system-ui, sans-serif"
+                      style={{ pointerEvents: 'none' }}
+                    >
+                      Led by {c.info.partner}
+                    </text>
+                    {/* Stats row */}
+                    <text
+                      x={tx + 8}
+                      y={ty + 38}
+                      fontSize={7}
+                      fontWeight={600}
+                      fill="#8b7ff5"
+                      fontFamily="Inter, system-ui, sans-serif"
+                      style={{ pointerEvents: 'none' }}
+                    >
+                      {c.info.members} members
+                    </text>
+                    <text
+                      x={tx + 8}
+                      y={ty + 49}
+                      fontSize={7}
+                      fontWeight={600}
+                      fill="#8b7ff5"
+                      fontFamily="Inter, system-ui, sans-serif"
+                      style={{ pointerEvents: 'none' }}
+                    >
+                      {c.info.reports} reports filed
+                    </text>
+                  </>
+                )
+              })()}
 
               {/* Tooltip for inactive on hover */}
               {isHovered && !isActive && (
