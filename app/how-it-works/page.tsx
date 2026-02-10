@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { IconUsers, IconCamera, IconSend, IconDocument, IconLink, IconTag, IconUpload, IconCheck, IconScale, IconGlobe, IconArrowDown, IconChart, IconShield } from '@/components/Icons'
 import ScrollReveal from '@/components/ScrollReveal'
+import TiltCard from '@/components/TiltCard'
 
 export default function HowItWorksPage() {
   return (
@@ -306,13 +307,15 @@ export default function HowItWorksPage() {
                 { icon: IconScale, title: 'Mandatory platform action', desc: 'Platforms must conduct risk assessments and implement mitigation. Non-compliance can result in fines up to 6% of global turnover.' },
               ].map(({ icon: Icon, title, desc }, i) => (
                 <ScrollReveal key={title} delay={i * 100}>
-                  <div className="bg-white rounded-xl border border-black/[0.08] p-5 transition-transform duration-200 hover:-translate-y-1">
-                    <div className="inline-flex items-center justify-center w-10 h-10 bg-brand-50 rounded-xl mb-3">
-                      <Icon className="w-5 h-5 text-brand-400" />
+                  <TiltCard glare>
+                    <div className="bg-white rounded-xl border border-black/[0.08] p-5">
+                      <div className="inline-flex items-center justify-center w-10 h-10 bg-brand-50 rounded-xl mb-3">
+                        <Icon className="w-5 h-5 text-brand-400" />
+                      </div>
+                      <h4 className="font-semibold text-dark text-sm mb-2">{title}</h4>
+                      <p className="text-xs text-dark-400 leading-relaxed">{desc}</p>
                     </div>
-                    <h4 className="font-semibold text-dark text-sm mb-2">{title}</h4>
-                    <p className="text-xs text-dark-400 leading-relaxed">{desc}</p>
-                  </div>
+                  </TiltCard>
                 </ScrollReveal>
               ))}
             </div>

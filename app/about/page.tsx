@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { IconUsers, IconShield, IconGlobe, IconScale, IconDocument, IconCheck, IconChart } from '@/components/Icons'
 import ScrollReveal from '@/components/ScrollReveal'
+import FlipCard from '@/components/FlipCard'
 
 export default function AboutPage() {
   return (
@@ -23,44 +24,52 @@ export default function AboutPage() {
         </ScrollReveal>
 
         <div className="grid md:grid-cols-3 gap-6">
-          <ScrollReveal delay={0}>
-            <div className="bg-[#f5f5f7] rounded-2xl p-6 h-full">
-              <div className="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center mb-4">
-                <IconShield className="w-6 h-6 text-red-500" />
-              </div>
-              <h3 className="font-bold text-dark mb-2">The Threat</h3>
-              <p className="text-sm text-dark-400">
-                Foreign information manipulation undermines EU democracy.
-                False stories spread 6x faster than true ones because platforms profit from engagement.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={100}>
-            <div className="bg-[#f5f5f7] rounded-2xl p-6 h-full">
-              <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center mb-4">
-                <IconDocument className="w-6 h-6 text-brand-400" />
-              </div>
-              <h3 className="font-bold text-dark mb-2">The Law</h3>
-              <p className="text-sm text-dark-400">
-                The DSA gives citizens legal tools to act (Art. 16, 17, 20, 22).
-                But less than 1% of individual reports result in meaningful action.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={200}>
-            <div className="bg-[#f5f5f7] rounded-2xl p-6 h-full">
-              <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center mb-4">
-                <IconUsers className="w-6 h-6 text-green-600" />
-              </div>
-              <h3 className="font-bold text-dark mb-2">The Solution</h3>
-              <p className="text-sm text-dark-400">
-                Coordinated cross-border reports trigger mandatory investigation (Art. 51 &amp; 56).
-                GetResilience makes that coordination automatic.
-              </p>
-            </div>
-          </ScrollReveal>
+          {[
+            {
+              icon: <IconShield className="w-6 h-6 text-red-500" />,
+              iconBg: 'bg-red-100',
+              title: 'The Threat',
+              summary: 'Foreign information manipulation undermines EU democracy.',
+              backText: 'False stories spread 6x faster than true ones because platforms profit from engagement. 83% of Europeans see disinformation as a threat to democracy.',
+              backBg: 'bg-red-500',
+            },
+            {
+              icon: <IconDocument className="w-6 h-6 text-brand-400" />,
+              iconBg: 'bg-brand-50',
+              title: 'The Law',
+              summary: 'The DSA gives citizens real legal tools to act.',
+              backText: 'Articles 16, 17, 20, and 22 create enforceable rights. But less than 1% of individual reports result in meaningful action without coordination.',
+              backBg: 'bg-brand-400',
+            },
+            {
+              icon: <IconUsers className="w-6 h-6 text-green-600" />,
+              iconBg: 'bg-green-100',
+              title: 'The Solution',
+              summary: 'Coordinated cross-border reports trigger mandatory investigation.',
+              backText: 'Under Art. 51 & 56, when multiple member states are affected, regulators must coordinate their response. GetResilience makes that coordination automatic.',
+              backBg: 'bg-green-600',
+            },
+          ].map((card, i) => (
+            <ScrollReveal key={card.title} delay={i * 100}>
+              <FlipCard
+                height="200px"
+                front={
+                  <div className="bg-[#f5f5f7] rounded-2xl p-6 h-full">
+                    <div className={`w-12 h-12 rounded-xl ${card.iconBg} flex items-center justify-center mb-4`}>
+                      {card.icon}
+                    </div>
+                    <h3 className="font-bold text-dark mb-2">{card.title}</h3>
+                    <p className="text-sm text-dark-400">{card.summary}</p>
+                  </div>
+                }
+                back={
+                  <div className={`${card.backBg} rounded-2xl p-6 h-full flex items-center`}>
+                    <p className="text-sm text-white leading-relaxed">{card.backText}</p>
+                  </div>
+                }
+              />
+            </ScrollReveal>
+          ))}
         </div>
       </div>
 
@@ -168,33 +177,48 @@ export default function AboutPage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
             { name: 'DROG', country: 'Netherlands', role: 'GetResilience creator. Pioneered the "Bad News" game for inoculation against disinformation.', highlight: true },
-            { name: 'PORT Lukasiewicz', country: 'Poland (Lead)', role: 'Coordinates the consortium and leads research & technology development.' },
-            { name: 'Faktabaari', country: 'Finland', role: 'Finland\'s leading fact-checking organization. Media literacy expertise.' },
-            { name: 'Debunk.org', country: 'Lithuania', role: 'Real-time disinformation monitoring. Baltic states specialist.' },
-            { name: 'ISP PAN', country: 'Poland', role: 'Institute of Political Studies. Information warfare research.' },
-            { name: 'University of Warsaw', country: 'Poland', role: 'Social science methodology and evidence-based intervention design.' },
+            { name: 'PORT Lukasiewicz', country: 'Poland (Lead)', role: 'Coordinates the consortium and leads research & technology development.', highlight: false },
+            { name: 'Faktabaari', country: 'Finland', role: 'Finland\'s leading fact-checking organization. Media literacy expertise.', highlight: false },
+            { name: 'Debunk.org', country: 'Lithuania', role: 'Real-time disinformation monitoring. Baltic states specialist.', highlight: false },
+            { name: 'ISP PAN', country: 'Poland', role: 'Institute of Political Studies. Information warfare research.', highlight: false },
+            { name: 'University of Warsaw', country: 'Poland', role: 'Social science methodology and evidence-based intervention design.', highlight: false },
           ].map((p, i) => (
             <ScrollReveal key={p.name} delay={i * 100}>
-              <div
-                className={`rounded-xl p-5 h-full ${
-                  p.highlight
-                    ? 'bg-brand-400 text-white'
-                    : 'bg-white border border-black/[0.08]'
-                }`}
-              >
-                <div className="flex items-center gap-3 mb-2">
-                  <div className={`w-9 h-9 rounded-lg flex items-center justify-center ${
-                    p.highlight ? 'bg-white/20' : 'bg-brand-50'
-                  }`}>
-                    <IconUsers className={`w-4 h-4 ${p.highlight ? 'text-white' : 'text-brand-400'}`} />
+              <FlipCard
+                height="140px"
+                front={
+                  <div
+                    className={`rounded-2xl p-5 h-full ${
+                      p.highlight
+                        ? 'bg-brand-400 text-white'
+                        : 'bg-white border border-black/[0.08]'
+                    }`}
+                  >
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className={`w-9 h-9 rounded-lg flex items-center justify-center ${
+                        p.highlight ? 'bg-white/20' : 'bg-brand-50'
+                      }`}>
+                        <IconUsers className={`w-4 h-4 ${p.highlight ? 'text-white' : 'text-brand-400'}`} />
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold text-sm ${p.highlight ? 'text-white' : 'text-dark'}`}>{p.name}</h3>
+                        <p className={`text-xs ${p.highlight ? 'text-white/70' : 'text-dark-400'}`}>{p.country}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className={`font-semibold text-sm ${p.highlight ? 'text-white' : 'text-dark'}`}>{p.name}</h3>
-                    <p className={`text-xs ${p.highlight ? 'text-white/70' : 'text-dark-400'}`}>{p.country}</p>
+                }
+                back={
+                  <div
+                    className={`rounded-2xl p-5 h-full flex items-center ${
+                      p.highlight
+                        ? 'bg-brand-500 text-white'
+                        : 'bg-dark text-white'
+                    }`}
+                  >
+                    <p className="text-xs leading-relaxed text-white/90">{p.role}</p>
                   </div>
-                </div>
-                <p className={`text-xs leading-relaxed ${p.highlight ? 'text-white/80' : 'text-dark-400'}`}>{p.role}</p>
-              </div>
+                }
+              />
             </ScrollReveal>
           ))}
         </div>
@@ -278,14 +302,26 @@ export default function AboutPage() {
             { art: 'Articles 51 & 56', title: 'Cross-Border Cooperation', desc: 'When multiple member states are affected, Digital Services Coordinators must coordinate their investigation and response.' },
           ].map((item, i) => (
             <ScrollReveal key={item.art} delay={i % 2 === 0 ? 0 : 100}>
-              <div className="bg-[#f5f5f7] rounded-xl p-5 h-full">
-                <div className="flex items-center gap-2 mb-2">
-                  <IconScale className="w-4 h-4 text-brand-400" />
-                  <span className="text-xs font-bold text-brand-400">{item.art}</span>
-                </div>
-                <h3 className="font-semibold text-dark text-sm mb-1">{item.title}</h3>
-                <p className="text-xs text-dark-400 leading-relaxed">{item.desc}</p>
-              </div>
+              <FlipCard
+                height="160px"
+                front={
+                  <div className="bg-[#f5f5f7] rounded-2xl p-5 h-full flex flex-col justify-center">
+                    <div className="flex items-center gap-2 mb-2">
+                      <IconScale className="w-4 h-4 text-brand-400" />
+                      <span className="text-xs font-bold text-brand-400">{item.art}</span>
+                    </div>
+                    <h3 className="font-semibold text-dark text-sm">{item.title}</h3>
+                  </div>
+                }
+                back={
+                  <div className="bg-dark rounded-2xl p-5 h-full flex items-center">
+                    <div>
+                      <span className="text-xs font-bold text-brand-300 mb-1 block">{item.art}</span>
+                      <p className="text-xs text-white/90 leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                }
+              />
             </ScrollReveal>
           ))}
         </div>

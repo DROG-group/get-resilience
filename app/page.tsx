@@ -3,6 +3,8 @@ import { IconUsers, IconCamera, IconSend, IconScale, IconShield, IconGlobe, Icon
 import EuropeMap from '@/components/EuropeMap'
 import ScrollReveal from '@/components/ScrollReveal'
 import AnimatedCounter from '@/components/AnimatedCounter'
+import FlipCard from '@/components/FlipCard'
+import TiltCard from '@/components/TiltCard'
 
 export default function HomePage() {
   return (
@@ -56,36 +58,30 @@ export default function HomePage() {
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <ScrollReveal delay={0}>
-              <div className="bg-[#f5f5f7] rounded-xl p-6">
-                <div className="text-3xl font-extrabold text-brand-400 mb-2">
-                  <AnimatedCounter value={83} suffix="%" />
-                </div>
-                <p className="text-sm text-dark-400">
-                  of Europeans see disinformation as a threat to democracy (Eurobarometer 2024).
-                </p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={100}>
-              <div className="bg-[#f5f5f7] rounded-xl p-6">
-                <div className="text-3xl font-extrabold text-brand-400 mb-2">
-                  <AnimatedCounter value={6} suffix="x" />
-                </div>
-                <p className="text-sm text-dark-400">
-                  faster &mdash; that&apos;s how quickly false stories spread compared to true ones, because platforms profit from engagement.
-                </p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={200}>
-              <div className="bg-[#f5f5f7] rounded-xl p-6">
-                <div className="text-3xl font-extrabold text-brand-400 mb-2">
-                  <AnimatedCounter value={1} prefix="<" suffix="%" />
-                </div>
-                <p className="text-sm text-dark-400">
-                  of individual user reports to platforms result in meaningful action. Without coordination, complaints disappear.
-                </p>
-              </div>
-            </ScrollReveal>
+            {[
+              { value: 83, suffix: '%', prefix: '', label: 'see it as a threat', backText: 'of Europeans see disinformation as a threat to democracy (Eurobarometer 2024).' },
+              { value: 6, suffix: 'x', prefix: '', label: 'faster spread', backText: 'False stories spread 6x faster than true ones because platforms profit from engagement over accuracy.' },
+              { value: 1, suffix: '%', prefix: '<', label: 'reports acted on', backText: 'Less than 1% of individual user reports result in meaningful action. Without coordination, complaints disappear.' },
+            ].map((stat, i) => (
+              <ScrollReveal key={stat.label} delay={i * 100}>
+                <FlipCard
+                  height="160px"
+                  front={
+                    <div className="bg-[#f5f5f7] rounded-2xl p-6 h-full flex flex-col items-center justify-center text-center">
+                      <div className="text-3xl font-extrabold text-brand-400 mb-2">
+                        <AnimatedCounter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
+                      </div>
+                      <p className="text-sm font-medium text-dark-400">{stat.label}</p>
+                    </div>
+                  }
+                  back={
+                    <div className="bg-brand-400 rounded-2xl p-6 h-full flex items-center justify-center text-center">
+                      <p className="text-sm text-white leading-relaxed">{stat.backText}</p>
+                    </div>
+                  }
+                />
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
@@ -105,61 +101,65 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-6">
             <ScrollReveal delay={0}>
-              <div className="bg-white rounded-xl border border-black/[0.08] p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center">
-                    <IconDocument className="w-5 h-5 text-brand-400" />
+              <TiltCard glare>
+                <div className="bg-white rounded-xl border border-black/[0.08] p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center">
+                      <IconDocument className="w-5 h-5 text-brand-400" />
+                    </div>
+                    <h3 className="font-semibold text-dark">Your Rights Under the DSA</h3>
                   </div>
-                  <h3 className="font-semibold text-dark">Your Rights Under the DSA</h3>
+                  <ul className="space-y-2 text-sm text-dark-400">
+                    <li className="flex items-start gap-2">
+                      <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
+                      <span><strong>Art. 16:</strong> Report illegal content directly to platforms &mdash; they must act</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
+                      <span><strong>Art. 17:</strong> Platforms must explain every moderation decision to you</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
+                      <span><strong>Art. 20:</strong> Appeal any decision through internal complaint systems</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
+                      <span><strong>Art. 22:</strong> Trusted Flaggers get priority treatment from platforms</span>
+                    </li>
+                  </ul>
                 </div>
-                <ul className="space-y-2 text-sm text-dark-400">
-                  <li className="flex items-start gap-2">
-                    <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
-                    <span><strong>Art. 16:</strong> Report illegal content directly to platforms &mdash; they must act</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
-                    <span><strong>Art. 17:</strong> Platforms must explain every moderation decision to you</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
-                    <span><strong>Art. 20:</strong> Appeal any decision through internal complaint systems</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
-                    <span><strong>Art. 22:</strong> Trusted Flaggers get priority treatment from platforms</span>
-                  </li>
-                </ul>
-              </div>
+              </TiltCard>
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
-              <div className="bg-white rounded-xl border border-black/[0.08] p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center">
-                    <IconScale className="w-5 h-5 text-brand-400" />
+              <TiltCard glare>
+                <div className="bg-white rounded-xl border border-black/[0.08] p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center">
+                      <IconScale className="w-5 h-5 text-brand-400" />
+                    </div>
+                    <h3 className="font-semibold text-dark">Why Coordination Unlocks the DSA</h3>
                   </div>
-                  <h3 className="font-semibold text-dark">Why Coordination Unlocks the DSA</h3>
+                  <ul className="space-y-2 text-sm text-dark-400">
+                    <li className="flex items-start gap-2">
+                      <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
+                      <span><strong>Art. 34:</strong> Cross-border patterns trigger mandatory risk assessments</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
+                      <span><strong>Art. 51 &amp; 56:</strong> Regulators must coordinate across borders when multiple states are affected</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
+                      <span>Coordinated reports establish <strong>systemic patterns</strong> that single reports cannot</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
+                      <span>Councils can work toward <strong>Trusted Flagger</strong> status for priority enforcement</span>
+                    </li>
+                  </ul>
                 </div>
-                <ul className="space-y-2 text-sm text-dark-400">
-                  <li className="flex items-start gap-2">
-                    <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
-                    <span><strong>Art. 34:</strong> Cross-border patterns trigger mandatory risk assessments</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
-                    <span><strong>Art. 51 &amp; 56:</strong> Regulators must coordinate across borders when multiple states are affected</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
-                    <span>Coordinated reports establish <strong>systemic patterns</strong> that single reports cannot</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
-                    <span>Councils can work toward <strong>Trusted Flagger</strong> status for priority enforcement</span>
-                  </li>
-                </ul>
-              </div>
+              </TiltCard>
             </ScrollReveal>
           </div>
         </div>
@@ -392,42 +392,46 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <ScrollReveal delay={0}>
-              <div className="bg-white rounded-xl border border-black/[0.08] p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center">
-                    <IconShield className="w-5 h-5 text-brand-400" />
+              <TiltCard glare>
+                <div className="bg-white rounded-xl border border-black/[0.08] p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center">
+                      <IconShield className="w-5 h-5 text-brand-400" />
+                    </div>
+                    <h3 className="font-semibold text-dark">GetResilience</h3>
                   </div>
-                  <h3 className="font-semibold text-dark">GetResilience</h3>
+                  <p className="text-sm text-dark-400 mb-3">
+                    The action platform. Establish Resilience Councils, document violations,
+                    and file coordinated complaints to EU regulators under the DSA.
+                  </p>
+                  <span className="text-xs font-medium text-brand-400">You are here</span>
                 </div>
-                <p className="text-sm text-dark-400 mb-3">
-                  The action platform. Establish Resilience Councils, document violations,
-                  and file coordinated complaints to EU regulators under the DSA.
-                </p>
-                <span className="text-xs font-medium text-brand-400">You are here</span>
-              </div>
+              </TiltCard>
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
-              <div className="bg-white rounded-xl border border-black/[0.08] p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center">
-                    <IconDocument className="w-5 h-5 text-brand-400" />
+              <TiltCard glare>
+                <div className="bg-white rounded-xl border border-black/[0.08] p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center">
+                      <IconDocument className="w-5 h-5 text-brand-400" />
+                    </div>
+                    <h3 className="font-semibold text-dark">EMOD e-Learning</h3>
                   </div>
-                  <h3 className="font-semibold text-dark">EMOD e-Learning</h3>
+                  <p className="text-sm text-dark-400 mb-3">
+                    The knowledge platform. 64 free modules teaching how to detect disinformation,
+                    verify information, and understand platform manipulation.
+                  </p>
+                  <a
+                    href="https://emod.saufex.eu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-medium text-brand-400 hover:text-brand-300 transition-colors"
+                  >
+                    Visit EMOD &rarr;
+                  </a>
                 </div>
-                <p className="text-sm text-dark-400 mb-3">
-                  The knowledge platform. 64 free modules teaching how to detect disinformation,
-                  verify information, and understand platform manipulation.
-                </p>
-                <a
-                  href="https://emod.saufex.eu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs font-medium text-brand-400 hover:text-brand-300 transition-colors"
-                >
-                  Visit EMOD &rarr;
-                </a>
-              </div>
+              </TiltCard>
             </ScrollReveal>
           </div>
 
