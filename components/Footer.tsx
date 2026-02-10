@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Footer() {
@@ -7,7 +8,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-[#fafafa] font-bold text-lg mb-4 flex items-center gap-2">
-              <span className="text-brand-400">&#9733;</span> GetResilience
+              <Image src="/saufex-logo.png" alt="SAUFEX" width={24} height={24} className="rounded" />
+              GetResilience
             </h3>
             <p className="text-sm text-white/60 leading-relaxed mb-3">
               From screenshot to legal action in three clicks. A decentralized platform
