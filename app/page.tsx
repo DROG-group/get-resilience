@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { IconUsers, IconCamera, IconSend, IconScale, IconShield, IconGlobe, IconDocument, IconChart, IconArrowDown, IconCheck, IconX, IconPerson, IconFlag } from '@/components/Icons'
+import EuropeMap from '@/components/EuropeMap'
 
 export default function HomePage() {
   return (
@@ -225,8 +226,23 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Europe Map */}
+      <section className="py-20 bg-[#fafafa]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-dark mb-3">
+            Active Councils Across Europe
+          </h2>
+          <p className="text-center text-dark-400 mb-10 max-w-xl mx-auto">
+            Resilience Councils are growing across the EU. Hover over countries to explore.
+          </p>
+          <div className="max-w-lg mx-auto">
+            <EuropeMap />
+          </div>
+        </div>
+      </section>
+
       {/* Stats */}
-      <section className="py-12 bg-[#fafafa]">
+      <section className="py-12 bg-[#f5f5f7]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[

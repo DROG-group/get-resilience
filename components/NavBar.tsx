@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useAuth } from '@/contexts/AuthContext'
 import { useState } from 'react'
 
@@ -13,7 +14,7 @@ export default function NavBar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 font-bold text-xl text-dark">
-            <span className="text-brand-400 text-2xl">&#9733;</span>
+            <Image src="/saufex-logo.png" alt="SAUFEX" width={28} height={28} className="rounded" />
             <span>GetResilience</span>
           </Link>
 
