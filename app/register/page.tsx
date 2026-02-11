@@ -47,8 +47,27 @@ export default function RegisterPage() {
             <h2 className="text-2xl font-bold text-dark mb-2">Check your email</h2>
             <p className="text-dark-400">
               We&apos;ve sent a confirmation link to <strong className="text-dark">{email}</strong>.
-              Click it to activate your account and start building resilience.
+              Click it to activate your account.
             </p>
+
+            <div className="mt-6 p-4 bg-brand-50 border border-brand-200 rounded-lg text-left">
+              <h3 className="font-semibold text-dark text-sm mb-2">What happens next?</h3>
+              <ol className="space-y-2 text-sm text-dark-400">
+                <li className="flex items-start gap-2">
+                  <span className="bg-brand-400 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">1</span>
+                  <span>Confirm your email and sign in</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="bg-brand-400 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">2</span>
+                  <span><strong>Complete the free DSA training</strong> on EMOD (~30 min) to learn how to file effective reports</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="bg-brand-400 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs flex-shrink-0 mt-0.5">3</span>
+                  <span>Join a council and start submitting violation reports</span>
+                </li>
+              </ol>
+            </div>
+
             <Link href="/login" className="btn-primary mt-6 inline-block">
               Go to Sign In
             </Link>

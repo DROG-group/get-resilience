@@ -38,47 +38,76 @@ export default function DashboardPage() {
         </p>
       </div>
 
-      {/* Training Status */}
-      {!training.loading && training.required && (
-        <div className={`mb-8 p-5 rounded-xl border ${
-          training.completed
-            ? 'bg-emerald-50 border-emerald-200'
-            : 'bg-amber-50 border-amber-200'
-        }`}>
-          <div className="flex items-start gap-4">
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
-              training.completed ? 'bg-emerald-200' : 'bg-amber-200'
-            }`}>
-              {training.completed ? (
-                <svg className="w-5 h-5 text-emerald-700" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-              ) : (
-                <svg className="w-5 h-5 text-amber-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              )}
-            </div>
-            <div className="flex-1">
-              <h3 className={`font-semibold ${training.completed ? 'text-emerald-800' : 'text-amber-800'}`}>
-                {training.completed ? 'DSA Training Complete' : 'Complete Your DSA Training'}
-              </h3>
-              <p className={`text-sm mt-0.5 ${training.completed ? 'text-emerald-700' : 'text-amber-700'}`}>
-                {training.completed
-                  ? `You have completed the required training. Certificate: ${training.certificateCode}`
-                  : 'A short free course on EMOD will prepare you to submit effective DSA reports. Takes about 30 minutes.'}
-              </p>
-              {!training.completed && (
+      {/* Getting Started - shown when training not completed */}
+      {!training.loading && training.required && !training.completed && (
+        <div className="mb-10 card p-8">
+          <h2 className="text-xl font-bold text-dark mb-2">Getting Started</h2>
+          <p className="text-dark-400 text-sm mb-6">
+            Complete these steps to start filing DSA reports with your council.
+          </p>
+          <div className="space-y-4">
+            {/* Step 1: Training */}
+            <div className="flex items-start gap-4 p-4 bg-brand-50 border border-brand-200 rounded-xl">
+              <div className="w-8 h-8 bg-brand-400 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                1
+              </div>
+              <div className="flex-1">
+                <h3 className="font-semibold text-dark">Complete DSA Training on EMOD</h3>
+                <p className="text-sm text-dark-400 mt-0.5">
+                  A free course that teaches you how to identify violations and file reports that meet EU standards. Takes about 30 minutes.
+                </p>
                 <a
                   href="https://emod.saufex.eu/dashboard"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block mt-2 text-sm font-medium text-amber-800 underline hover:no-underline"
+                  className="inline-flex items-center gap-1 mt-3 bg-brand-400 text-white font-semibold px-5 py-2 rounded-full text-sm hover:bg-brand-300 transition-colors"
                 >
-                  Start training on EMOD
+                  Start Training on EMOD
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
                 </a>
-              )}
+                <p className="text-xs text-dark-400/70 mt-2">
+                  Use the same email ({user?.email}) to sign in on EMOD. Your accounts are linked.
+                </p>
+              </div>
             </div>
+
+            {/* Step 2: Join council */}
+            <div className="flex items-start gap-4 p-4 bg-[#f5f5f7] rounded-xl opacity-60">
+              <div className="w-8 h-8 bg-dark/20 text-dark-400 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                2
+              </div>
+              <div>
+                <h3 className="font-semibold text-dark-400">Join a Resilience Council</h3>
+                <p className="text-sm text-dark-400 mt-0.5">Find a council in your country or create a new one.</p>
+              </div>
+            </div>
+
+            {/* Step 3: Submit */}
+            <div className="flex items-start gap-4 p-4 bg-[#f5f5f7] rounded-xl opacity-60">
+              <div className="w-8 h-8 bg-dark/20 text-dark-400 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                3
+              </div>
+              <div>
+                <h3 className="font-semibold text-dark-400">Submit DSA Violation Reports</h3>
+                <p className="text-sm text-dark-400 mt-0.5">Document violations with evidence and coordinate with your council.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Training Complete badge */}
+      {!training.loading && training.required && training.completed && (
+        <div className="mb-8 p-4 rounded-xl border bg-emerald-50 border-emerald-200">
+          <div className="flex items-center gap-3">
+            <svg className="w-5 h-5 text-emerald-700 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            <p className="text-sm text-emerald-800">
+              <strong>DSA Training Complete</strong> &mdash; Certificate: {training.certificateCode}
+            </p>
           </div>
         </div>
       )}
