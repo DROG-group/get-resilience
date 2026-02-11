@@ -96,29 +96,14 @@ export default function HowItWorksPage() {
               </div>
             </div>
 
-            {/* Example councils visual */}
-            <div className="bg-[#f5f5f7] rounded-xl p-5">
-              <p className="text-xs font-medium text-dark-400 uppercase tracking-wider mb-3">Active Councils</p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                {[
-                  { country: 'Poland', focus: 'Election integrity', members: 38, partner: 'PORT Lukasiewicz' },
-                  { country: 'Netherlands', focus: 'Climate disinfo', members: 45, partner: 'DROG' },
-                  { country: 'Finland', focus: 'Media literacy', members: 24, partner: 'Faktabaari' },
-                  { country: 'Lithuania', focus: 'Foreign interference', members: 31, partner: 'Debunk.org' },
-                ].map((c, i) => (
-                  <ScrollReveal key={c.country} delay={i * 80}>
-                    <div className="bg-white rounded-lg p-3 border border-black/[0.06] transition-transform duration-200 hover:-translate-y-1">
-                      <p className="font-semibold text-dark text-sm">{c.country}</p>
-                      <p className="text-xs text-dark-400">{c.focus}</p>
-                      <p className="text-[10px] text-dark-400 mt-1">Led by {c.partner}</p>
-                      <div className="flex items-center gap-1 mt-2">
-                        <IconUsers className="w-3 h-3 text-brand-400" />
-                        <span className="text-xs text-brand-400 font-medium">{c.members} members</span>
-                      </div>
-                    </div>
-                  </ScrollReveal>
-                ))}
-              </div>
+            {/* CTA to browse councils */}
+            <div className="bg-[#f5f5f7] rounded-xl p-5 text-center">
+              <p className="text-sm text-dark-400 mb-3">
+                Councils are organized by country and focus area. Browse existing ones or create your own.
+              </p>
+              <Link href="/councils" className="text-brand-400 hover:text-brand-300 font-semibold text-sm transition-colors">
+                Browse active councils &rarr;
+              </Link>
             </div>
           </div>
         </div>

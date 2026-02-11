@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import { createServerFetch } from '@/lib/supabase/fetch'
 
 // Routes that require authentication
-const PROTECTED_ROUTES = ['/dashboard', '/councils/create', '/reports']
+const PROTECTED_ROUTES = ['/dashboard', '/councils/create', '/reports', '/profile']
 
 // Security headers
 const securityHeaders = {

@@ -363,7 +363,7 @@ export default function HomePage() {
               Active Councils Across Europe
             </h2>
             <p className="text-center text-dark-400 mb-10 max-w-2xl mx-auto">
-              The SAUFEX consortium operates across five EU countries. Poland launched the first FIMI Resilience Council in 2024, and this model is now expanding across the EU.
+              The SAUFEX consortium operates across five EU countries. Resilience Councils are being established across the EU to coordinate DSA enforcement.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={200}>

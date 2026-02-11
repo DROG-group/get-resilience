@@ -3,6 +3,7 @@ import './globals.css'
 import { AuthProvider } from '@/contexts/AuthContext'
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
+import { Toaster } from 'sonner'
 
 export const metadata: Metadata = {
   title: 'GetResilience - Citizen-led Resilience Councils',
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <NavBar />
           <main className="flex-1">{children}</main>
           <Footer />
+          <Toaster position="bottom-right" />
         </AuthProvider>
       </body>
     </html>

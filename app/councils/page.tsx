@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import EuropeMap from '@/components/EuropeMap'
 import CouncilCard from '@/components/CouncilCard'
@@ -7,7 +8,8 @@ import { useCouncils } from '@/hooks/useCouncils'
 import { useAuth } from '@/contexts/AuthContext'
 
 export default function CouncilsPage() {
-  const { councils, loading } = useCouncils({})
+  const [search, setSearch] = useState('')
+  const { councils, loading } = useCouncils({ search: search || undefined })
   const { user } = useAuth()
 
   return (
@@ -33,15 +35,26 @@ export default function CouncilsPage() {
 
       {/* Council List */}
       <div className="mt-10">
-        <h2 className="text-xl font-semibold text-dark mb-4">
-          All Councils {councils.length > 0 && `(${councils.length})`}
-        </h2>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
+          <h2 className="text-xl font-semibold text-dark">
+            All Councils {councils.length > 0 && `(${councils.length})`}
+          </h2>
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search councils..."
+            className="input-field max-w-xs"
+          />
+        </div>
         {loading ? (
           <div className="text-center py-8 text-dark-400">Loading councils...</div>
         ) : councils.length === 0 ? (
           <div className="card p-8 text-center">
-            <p className="text-dark-400 mb-3">No councils have been created yet. Be the first!</p>
-            {user && (
+            <p className="text-dark-400 mb-3">
+              {search ? 'No councils match your search' : 'No councils have been created yet. Be the first!'}
+            </p>
+            {!search && user && (
               <Link href="/councils/create" className="btn-primary">
                 Create a Council
               </Link>

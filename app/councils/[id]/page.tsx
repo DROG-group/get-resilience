@@ -7,8 +7,9 @@ import { useAuth } from '@/contexts/AuthContext'
 import { getCountryName, formatDate } from '@/lib/utils'
 import ReportCard from '@/components/ReportCard'
 import { createClient } from '@/lib/supabase/client'
-import { Report } from '@/types/database'
+import { Report, Profile } from '@/types/database'
 import { useEffect } from 'react'
+import { toast } from 'sonner'
 
 export default function CouncilDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params)
@@ -16,6 +17,7 @@ export default function CouncilDetailPage({ params }: { params: Promise<{ id: st
   const { user } = useAuth()
   const [actionLoading, setActionLoading] = useState(false)
   const [reports, setReports] = useState<Report[]>([])
+  const [memberProfiles, setMemberProfiles] = useState<Record<string, Profile>>({})
 
   useEffect(() => {
     if (!id) return
@@ -28,16 +30,73 @@ export default function CouncilDetailPage({ params }: { params: Promise<{ id: st
       .then(({ data }) => setReports(data || []))
   }, [id])
 
+  // Fetch member profiles
+  useEffect(() => {
+    if (members.length === 0) return
+    const supabase = createClient()
+    const userIds = members.map((m) => m.user_id)
+    supabase
+      .from('gr_profiles')
+      .select('*')
+      .in('id', userIds)
+      .then(({ data }) => {
+        const profiles: Record<string, Profile> = {}
+        data?.forEach((p) => { profiles[p.id] = p })
+        setMemberProfiles(profiles)
+      })
+  }, [members])
+
+  async function handleRoleChange(memberId: string, newRole: string) {
+    setActionLoading(true)
+    const res = await fetch(`/api/councils/${id}/members/${memberId}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ role: newRole }),
+    })
+    if (res.ok) {
+      toast.success(`Member role updated to ${newRole}`)
+      await refetch()
+    } else {
+      const data = await res.json()
+      toast.error(data.error || 'Failed to update role')
+    }
+    setActionLoading(false)
+  }
+
+  async function handleRemoveMember(memberId: string) {
+    if (!confirm('Remove this member from the council?')) return
+    setActionLoading(true)
+    const res = await fetch(`/api/councils/${id}/members/${memberId}`, { method: 'DELETE' })
+    if (res.ok) {
+      toast.success('Member removed')
+      await refetch()
+    } else {
+      toast.error('Failed to remove member')
+    }
+    setActionLoading(false)
+  }
+
   async function handleJoin() {
     setActionLoading(true)
-    await fetch(`/api/councils/${id}/join`, { method: 'POST' })
+    const res = await fetch(`/api/councils/${id}/join`, { method: 'POST' })
+    if (res.ok) {
+      toast.success('You joined the council!')
+    } else {
+      toast.error('Failed to join council')
+    }
     await refetch()
     setActionLoading(false)
   }
 
   async function handleLeave() {
+    if (!confirm('Are you sure you want to leave this council?')) return
     setActionLoading(true)
-    await fetch(`/api/councils/${id}/leave`, { method: 'POST' })
+    const res = await fetch(`/api/councils/${id}/leave`, { method: 'POST' })
+    if (res.ok) {
+      toast.success('You left the council')
+    } else {
+      toast.error('Failed to leave council')
+    }
     await refetch()
     setActionLoading(false)
   }
@@ -127,20 +186,65 @@ export default function CouncilDetailPage({ params }: { params: Promise<{ id: st
           Members ({members.length})
         </h2>
         <div className="card divide-y divide-black/[0.08]">
-          {members.map((member) => (
-            <div key={member.id} className="px-4 py-3 flex items-center justify-between">
-              <span className="text-sm text-dark-400">{member.user_id.slice(0, 8)}...</span>
-              <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-                member.role === 'admin'
-                  ? 'bg-brand-100 text-brand-700'
-                  : member.role === 'moderator'
-                  ? 'bg-amber-100 text-amber-700'
-                  : 'bg-gray-100 text-dark-400'
-              }`}>
-                {member.role}
-              </span>
-            </div>
-          ))}
+          {members.map((member) => {
+            const profile = memberProfiles[member.user_id]
+            const isAdmin = memberRole === 'admin'
+            const isOwnEntry = member.user_id === user?.id
+            return (
+              <div key={member.id} className="px-4 py-3 flex items-center justify-between gap-3">
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-medium text-dark truncate">
+                    {profile?.full_name || member.user_id.slice(0, 8) + '...'}
+                  </p>
+                  {profile?.organization && (
+                    <p className="text-xs text-dark-400">{profile.organization}</p>
+                  )}
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${
+                    member.role === 'admin'
+                      ? 'bg-brand-100 text-brand-700'
+                      : member.role === 'moderator'
+                      ? 'bg-amber-100 text-amber-700'
+                      : 'bg-gray-100 text-dark-400'
+                  }`}>
+                    {member.role}
+                  </span>
+                  {isAdmin && !isOwnEntry && member.role !== 'admin' && (
+                    <div className="flex items-center gap-1">
+                      {member.role === 'member' ? (
+                        <button
+                          onClick={() => handleRoleChange(member.user_id, 'moderator')}
+                          disabled={actionLoading}
+                          className="text-xs text-brand-400 hover:underline"
+                          title="Promote to moderator"
+                        >
+                          Promote
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() => handleRoleChange(member.user_id, 'member')}
+                          disabled={actionLoading}
+                          className="text-xs text-amber-600 hover:underline"
+                          title="Demote to member"
+                        >
+                          Demote
+                        </button>
+                      )}
+                      <button
+                        onClick={() => handleRemoveMember(member.user_id)}
+                        disabled={actionLoading}
+                        className="text-xs text-red-500 hover:underline ml-1"
+                        title="Remove member"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
 

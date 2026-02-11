@@ -39,6 +39,9 @@ export default function NavBar() {
                     <Link href="/reports" className="text-dark-400 hover:text-dark transition-colors">
                       My Reports
                     </Link>
+                    <Link href="/profile" className="text-dark-400 hover:text-dark transition-colors">
+                      Profile
+                    </Link>
                     <button
                       onClick={() => signOut()}
                       className="text-dark-400 hover:text-dark px-4 py-1.5 rounded-full transition-colors"
@@ -101,6 +104,9 @@ export default function NavBar() {
                 </Link>
                 <Link href="/reports" className="block py-2 text-dark-400 hover:text-dark" onClick={() => setMenuOpen(false)}>
                   My Reports
+                </Link>
+                <Link href="/profile" className="block py-2 text-dark-400 hover:text-dark" onClick={() => setMenuOpen(false)}>
+                  Profile
                 </Link>
                 <button onClick={() => { signOut(); setMenuOpen(false) }} className="block py-2 text-dark-400 hover:text-dark">
                   Sign Out

@@ -9,7 +9,7 @@ export default function ReportCard({ report }: { report: Report }) {
   const platform = PLATFORMS.find((p) => p.id === report.platform)
 
   return (
-    <div className="card p-6">
+    <Link href={`/reports/${report.id}`} className="card p-6 block hover:border-brand-400 transition-colors">
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
           <h3 className="text-lg font-semibold text-dark truncate">{report.title}</h3>
@@ -30,16 +30,9 @@ export default function ReportCard({ report }: { report: Report }) {
       <div className="mt-4 flex items-center justify-between text-sm text-dark-400">
         <span>{formatDate(report.created_at)}</span>
         {report.content_url && (
-          <a
-            href={report.content_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-brand-400 hover:text-brand-300"
-          >
-            View content
-          </a>
+          <span className="text-brand-400">Has content link</span>
         )}
       </div>
-    </div>
+    </Link>
   )
 }
