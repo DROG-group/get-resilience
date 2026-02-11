@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { IconUsers, IconCamera, IconSend, IconScale, IconShield, IconGlobe, IconDocument, IconChart, IconArrowDown, IconCheck, IconX, IconPerson, IconFlag } from '@/components/Icons'
-import EuropeMap from '@/components/EuropeMap'
+import HomeEuropeMap from '@/components/HomeEuropeMap'
 import ScrollReveal from '@/components/ScrollReveal'
 import AnimatedCounter from '@/components/AnimatedCounter'
 import FlipCard from '@/components/FlipCard'
@@ -368,7 +368,7 @@ export default function HomePage() {
           </ScrollReveal>
           <ScrollReveal delay={200}>
             <div className="max-w-lg mx-auto">
-              <EuropeMap />
+              <HomeEuropeMap />
             </div>
           </ScrollReveal>
         </div>

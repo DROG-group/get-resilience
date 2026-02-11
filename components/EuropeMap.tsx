@@ -1,25 +1,17 @@
 'use client'
 
 import { useState } from 'react'
+import { Council } from '@/types/database'
 
-type CouncilInfo = {
-  council: string
-  members: number
-  reports: number
-  partner: string
-}
-
-type Country = {
+type CountryShape = {
   id: string
   name: string
   path: string
   cx: number
   cy: number
-  active?: boolean
-  info?: CouncilInfo
 }
 
-const countries: Country[] = [
+const countryShapes: CountryShape[] = [
   {
     id: 'AT', name: 'Austria', cx: 223, cy: 411,
     path: 'M227,396 L235,399 L238,393 L254,397 L256,406 L255,410 L250,410 L252,412 L250,419 L233,427 L215,423 L213,418 L202,422 L190,418 L192,412 L195,416 L198,412 L203,414 L217,410 L220,413 L218,405 L227,396 Z',
@@ -57,8 +49,7 @@ const countries: Country[] = [
     path: 'M135,506 L137,507 L133,512 L127,509 L132,504 L135,506 Z M38,459 L45,463 L55,461 L91,464 L102,471 L112,472 L113,470 L118,472 L119,475 L135,477 L132,484 L112,494 L114,495 L104,509 L108,518 L102,522 L100,530 L94,532 L88,540 L68,540 L57,548 L49,537 L42,535 L41,531 L46,524 L42,521 L46,514 L41,507 L45,507 L46,492 L52,485 L49,481 L35,483 L35,479 L29,482 L30,472 L28,474 L29,471 L25,470 L38,459 Z',
   },
   {
-    id: 'FI', name: 'Finland', cx: 322, cy: 153, active: true,
-    info: { council: 'Faktabaari Council', members: 24, reports: 18, partner: 'Faktabaari' },
+    id: 'FI', name: 'Finland', cx: 322, cy: 153,
     path: 'M352,20 L360,25 L362,30 L358,36 L359,41 L354,45 L358,46 L355,54 L357,62 L363,64 L368,73 L360,91 L369,117 L367,118 L365,133 L370,136 L369,144 L373,148 L368,157 L382,173 L366,198 L348,218 L338,219 L339,215 L337,220 L332,220 L333,222 L330,220 L320,227 L311,227 L312,225 L306,230 L310,226 L308,228 L309,226 L306,224 L308,220 L303,223 L304,220 L293,215 L296,199 L291,176 L296,171 L294,167 L301,166 L300,163 L310,154 L321,136 L328,135 L328,122 L322,118 L322,113 L317,115 L313,106 L316,93 L312,85 L314,79 L311,78 L313,67 L306,57 L299,55 L286,41 L290,41 L292,34 L296,35 L302,49 L309,51 L315,46 L324,52 L331,42 L333,26 L337,19 L343,20 L350,15 L352,20 Z',
   },
   {
@@ -86,8 +77,7 @@ const countries: Country[] = [
     path: 'M212,419 L215,423 L226,425 L223,428 L228,436 L222,435 L214,438 L214,454 L225,462 L229,472 L235,479 L247,481 L246,487 L264,496 L268,502 L266,506 L262,500 L254,498 L250,506 L256,510 L256,515 L251,517 L247,527 L243,526 L248,517 L243,503 L203,476 L194,456 L183,451 L172,459 L173,454 L166,452 L168,446 L164,443 L169,440 L166,434 L175,433 L180,426 L185,434 L188,426 L195,429 L194,425 L198,425 L198,421 L212,419 Z M189,490 L192,498 L190,513 L185,512 L182,516 L179,514 L181,505 L178,493 L189,490 Z M242,524 L238,532 L238,541 L215,528 L223,524 L226,526 L242,524 Z',
   },
   {
-    id: 'LT', name: 'Lithuania', cx: 314, cy: 305, active: true,
-    info: { council: 'Debunk Council', members: 31, reports: 42, partner: 'Debunk.org' },
+    id: 'LT', name: 'Lithuania', cx: 314, cy: 305,
     path: 'M325,288 L339,298 L337,303 L340,304 L332,310 L331,321 L329,318 L319,325 L312,324 L310,319 L304,316 L304,307 L292,304 L290,291 L300,286 L317,288 L324,285 L325,288 Z',
   },
   {
@@ -103,13 +93,11 @@ const countries: Country[] = [
     path: 'M233,545 L237,549 L233,553 L229,549 Z',
   },
   {
-    id: 'NL', name: 'Netherlands', cx: 152, cy: 349, active: true,
-    info: { council: 'DROG Council', members: 45, reports: 67, partner: 'DROG' },
+    id: 'NL', name: 'Netherlands', cx: 152, cy: 349,
     path: 'M157,346 L151,346 L156,343 L157,346 Z M166,332 L169,338 L165,344 L168,348 L165,353 L158,355 L161,359 L159,369 L156,368 L158,364 L150,359 L137,360 L140,358 L144,360 L139,356 L143,356 L140,354 L146,345 L154,348 L158,345 L153,336 L151,346 L146,345 L148,338 L158,332 L166,332 Z',
   },
   {
-    id: 'PL', name: 'Poland', cx: 272, cy: 353, active: true,
-    info: { council: 'Poland Pilot Council', members: 38, reports: 53, partner: 'PORT Lukasiewicz' },
+    id: 'PL', name: 'Poland', cx: 272, cy: 353,
     path: 'M271,386 L268,381 L260,378 L261,375 L254,374 L255,377 L252,378 L248,374 L249,370 L241,369 L239,366 L236,368 L238,362 L234,354 L234,344 L230,340 L231,327 L234,326 L231,324 L248,319 L250,315 L263,310 L270,313 L267,312 L271,318 L278,316 L274,319 L279,316 L307,317 L311,320 L315,337 L315,342 L309,348 L313,351 L312,358 L317,368 L316,374 L304,385 L306,393 L295,387 L284,388 L282,391 L276,385 L274,388 L271,386 Z',
   },
   {
@@ -134,10 +122,27 @@ const countries: Country[] = [
   },
 ]
 
-export default function EuropeMap() {
+type EuropeMapProps = {
+  councils?: Council[]
+}
+
+export default function EuropeMap({ councils = [] }: EuropeMapProps) {
   const [hovered, setHovered] = useState<string | null>(null)
 
-  const hoveredCountry = hovered ? countries.find((c) => c.id === hovered) : null
+  // Group councils by country code, aggregating counts
+  const councilsByCountry = councils.reduce<Record<string, { names: string[]; members: number; reports: number }>>((acc, c) => {
+    const code = c.country.toUpperCase()
+    if (!acc[code]) {
+      acc[code] = { names: [], members: 0, reports: 0 }
+    }
+    acc[code].names.push(c.name)
+    acc[code].members += c.member_count
+    acc[code].reports += c.report_count
+    return acc
+  }, {})
+
+  const hoveredShape = hovered ? countryShapes.find((c) => c.id === hovered) : null
+  const activeCount = Object.keys(councilsByCountry).length
 
   return (
     <div className="w-full max-w-lg mx-auto">
@@ -148,8 +153,8 @@ export default function EuropeMap() {
         aria-label="Map of EU member states showing active Resilience Councils"
       >
         {/* Country shapes layer */}
-        {countries.map((c) => {
-          const isActive = c.active
+        {countryShapes.map((c) => {
+          const isActive = !!councilsByCountry[c.id]
           const isHovered = hovered === c.id
 
           return (
@@ -197,13 +202,14 @@ export default function EuropeMap() {
         })}
 
         {/* Tooltip layer - rendered on top of all countries */}
-        {hoveredCountry && (() => {
-          const c = hoveredCountry
-          const isActive = c.active
+        {hoveredShape && (() => {
+          const c = hoveredShape
+          const info = councilsByCountry[c.id]
 
-          if (isActive && c.info) {
+          if (info) {
+            const label = info.names.length === 1 ? info.names[0] : `${info.names.length} councils`
             const tw = 140
-            const th = 64
+            const th = 52
             const tx = Math.min(Math.max(c.cx - tw / 2, 4), 423 - tw - 4)
             const above = c.cy - th - 12
             const ty = above > 4 ? above : c.cy + 16
@@ -225,16 +231,13 @@ export default function EuropeMap() {
                   />
                 )}
                 <text x={tx + 8} y={ty + 13} fontSize={8} fontWeight={700} fill="#ffffff" fontFamily="Inter, system-ui, sans-serif">
-                  {c.info.council}
+                  {label}
                 </text>
-                <text x={tx + 8} y={ty + 24} fontSize={7} fill="#a1a1aa" fontFamily="Inter, system-ui, sans-serif">
-                  Led by {c.info.partner}
+                <text x={tx + 8} y={ty + 28} fontSize={7.5} fontWeight={600} fill="#8b7ff5" fontFamily="Inter, system-ui, sans-serif">
+                  {info.members} member{info.members !== 1 ? 's' : ''}
                 </text>
-                <text x={tx + 8} y={ty + 38} fontSize={7.5} fontWeight={600} fill="#8b7ff5" fontFamily="Inter, system-ui, sans-serif">
-                  {c.info.members} members
-                </text>
-                <text x={tx + 8} y={ty + 50} fontSize={7.5} fontWeight={600} fill="#8b7ff5" fontFamily="Inter, system-ui, sans-serif">
-                  {c.info.reports} reports filed
+                <text x={tx + 8} y={ty + 40} fontSize={7.5} fontWeight={600} fill="#8b7ff5" fontFamily="Inter, system-ui, sans-serif">
+                  {info.reports} report{info.reports !== 1 ? 's' : ''} filed
                 </text>
               </g>
             )
@@ -266,7 +269,7 @@ export default function EuropeMap() {
       <div className="flex items-center justify-center gap-6 mt-4">
         <div className="flex items-center gap-2">
           <div className="w-4 h-3 rounded bg-brand-400" />
-          <span className="text-xs text-dark-400">Active Council</span>
+          <span className="text-xs text-dark-400">Active Council ({activeCount})</span>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-4 h-3 rounded bg-[#e4e4e7]" />

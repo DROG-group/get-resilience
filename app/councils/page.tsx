@@ -32,7 +32,7 @@ export default function CouncilsPage() {
       <div className="mb-10 p-6 bg-light rounded-xl border border-dark/5">
         <h2 className="text-lg font-semibold text-dark mb-1 text-center">Councils Across Europe</h2>
         <p className="text-sm text-dark-400 mb-4 text-center">Hover over highlighted countries to see council details</p>
-        <EuropeMap />
+        <EuropeMap councils={councils} />
       </div>
 
       {/* Filters */}
