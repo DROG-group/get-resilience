@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import CouncilCard from '@/components/CouncilCard'
 import CountrySelect from '@/components/CountrySelect'
+import EuropeMap from '@/components/EuropeMap'
 import { useCouncils } from '@/hooks/useCouncils'
 import { useAuth } from '@/contexts/AuthContext'
 
@@ -25,6 +26,13 @@ export default function CouncilsPage() {
             Create Council
           </Link>
         )}
+      </div>
+
+      {/* Europe Map */}
+      <div className="mb-10 p-6 bg-light rounded-xl border border-dark/5">
+        <h2 className="text-lg font-semibold text-dark mb-1 text-center">Councils Across Europe</h2>
+        <p className="text-sm text-dark-400 mb-4 text-center">Hover over highlighted countries to see council details</p>
+        <EuropeMap />
       </div>
 
       {/* Filters */}
