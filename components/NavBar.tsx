@@ -29,6 +29,9 @@ export default function NavBar() {
             <Link href="/councils" className="text-dark-400 hover:text-dark transition-colors">
               Councils
             </Link>
+            <Link href="/faq" className="text-dark-400 hover:text-dark transition-colors">
+              FAQ
+            </Link>
             {!loading && (
               <>
                 {user ? (
@@ -96,6 +99,9 @@ export default function NavBar() {
             </Link>
             <Link href="/councils" className="block py-2 text-dark-400 hover:text-dark" onClick={() => setMenuOpen(false)}>
               Councils
+            </Link>
+            <Link href="/faq" className="block py-2 text-dark-400 hover:text-dark" onClick={() => setMenuOpen(false)}>
+              FAQ
             </Link>
             {!loading && user ? (
               <>

@@ -22,7 +22,7 @@ export default function HowItWorksPage() {
           <p className="text-sm text-dark-400 leading-relaxed">
             Platforms process millions of individual reports daily and most get dismissed.
             The DSA&apos;s real power lies in cross-border mechanisms: when identical complaints reach multiple
-            Digital Services Coordinators simultaneously, regulators must coordinate their response (Art. 51 &amp; 56).
+            Digital Services Coordinators (DSCs — the national regulator each EU country has appointed to enforce the DSA) simultaneously, they must coordinate their response (Art. 51 &amp; 56).
           </p>
         </div>
       </ScrollReveal>
@@ -287,9 +287,9 @@ export default function HowItWorksPage() {
             <h3 className="font-semibold text-dark mb-4">What Happens After Filing</h3>
             <div className="grid md:grid-cols-3 gap-4 mb-5">
               {[
-                { icon: IconChart, title: 'Systemic pattern established', desc: 'Multiple identical reports from different countries reveal a cross-border violation that Art. 34 requires platforms to assess.' },
-                { icon: IconSend, title: 'Simultaneous investigation', desc: 'All 27 Digital Services Coordinators receive the same evidence. Under Art. 51, they must coordinate their response.' },
-                { icon: IconScale, title: 'Mandatory platform action', desc: 'Platforms must conduct risk assessments and implement mitigation. Non-compliance can result in fines up to 6% of global turnover.' },
+                { icon: IconChart, title: 'Systemic pattern established', desc: 'Multiple identical reports from different countries reveal a cross-border violation. Under Art. 34, platforms with 45M+ EU users must formally assess the risk.' },
+                { icon: IconSend, title: 'Simultaneous investigation', desc: 'All 27 national DSCs (Digital Services Coordinators) receive the same evidence. Under Art. 51, they must coordinate their response across borders.' },
+                { icon: IconScale, title: 'Mandatory platform action', desc: 'Platforms must conduct risk assessments and implement mitigation measures. Non-compliance can result in fines up to 6% of global annual turnover.' },
               ].map(({ icon: Icon, title, desc }, i) => (
                 <ScrollReveal key={title} delay={i * 100}>
                   <TiltCard glare>
@@ -313,14 +313,74 @@ export default function HowItWorksPage() {
                   <div>
                     <h3 className="font-semibold text-dark text-sm mb-1">The Path to Trusted Flagger Status</h3>
                     <p className="text-xs text-dark-400 leading-relaxed">
-                      Under DSA Article 22, organizations with demonstrated expertise can achieve Trusted Flagger status
-                      for priority treatment. As councils build a track record of accurate reports, they can apply through
-                      their national Digital Services Coordinator.
+                      Under DSA Article 22, organizations that demonstrate expertise in identifying illegal content can apply
+                      for &ldquo;Trusted Flagger&rdquo; status with their national DSC. Platforms must process Trusted Flagger
+                      reports faster and with greater care. As councils build a track record of accurate, well-documented reports,
+                      they become eligible to apply for this status.
                     </p>
                   </div>
                 </div>
               </div>
             </ScrollReveal>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      {/* Your Report's Journey */}
+      <ScrollReveal>
+        <div className="mb-20">
+          <h2 className="text-2xl font-bold text-dark mb-3 text-center">Your Report&apos;s Journey</h2>
+          <p className="text-center text-dark-400 mb-8 max-w-2xl mx-auto">
+            Here&apos;s what happens at each stage — and what you can expect in terms of timeline.
+          </p>
+
+          <div className="space-y-0">
+            {[
+              {
+                status: 'Submitted',
+                color: 'bg-blue-400',
+                time: 'Immediate',
+                desc: 'Your report is received and visible on your dashboard and to your council members. Evidence and DSA article mapping are locked in.',
+              },
+              {
+                status: 'Under Review',
+                color: 'bg-amber-400',
+                time: 'Within days',
+                desc: 'A council admin or moderator reviews your evidence, checks the DSA article mapping, and may reach out for additional context.',
+              },
+              {
+                status: 'Forwarded to EU DSCs',
+                color: 'bg-brand-400',
+                time: 'When the council is ready',
+                desc: 'The council packages your report with other related evidence and forwards it to Digital Services Coordinators across EU member states. This is the step where individual reports become coordinated cross-border action.',
+              },
+              {
+                status: 'Regulatory Process',
+                color: 'bg-purple-400',
+                time: 'Weeks to months',
+                desc: 'DSCs assess the complaint, coordinate across borders if needed (Art. 51), and may require platforms to conduct risk assessments (Art. 34). Formal investigations can take time, but the evidence is permanently on record.',
+              },
+              {
+                status: 'Resolved',
+                color: 'bg-emerald-500',
+                time: 'Varies',
+                desc: 'The platform has taken action, the regulatory process has concluded, or the violation has been addressed. Your report contributed to the outcome.',
+              },
+            ].map((step, i) => (
+              <div key={step.status} className="flex gap-4">
+                <div className="flex flex-col items-center">
+                  <div className={`w-4 h-4 rounded-full ${step.color} flex-shrink-0 mt-1.5`} />
+                  {i < 4 && <div className="w-0.5 h-full bg-black/[0.08] min-h-[60px]" />}
+                </div>
+                <div className="pb-6">
+                  <div className="flex items-center gap-3 mb-1">
+                    <h4 className="font-semibold text-dark text-sm">{step.status}</h4>
+                    <span className="text-xs text-dark-400 bg-[#f5f5f7] rounded-full px-2.5 py-0.5">{step.time}</span>
+                  </div>
+                  <p className="text-xs text-dark-400 leading-relaxed">{step.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </ScrollReveal>

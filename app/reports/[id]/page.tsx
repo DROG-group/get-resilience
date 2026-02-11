@@ -7,7 +7,7 @@ import { useAuth } from '@/contexts/AuthContext'
 import { Report, ReportEvidence, Council } from '@/types/database'
 import StatusBadge from '@/components/StatusBadge'
 import ViolationTypeBadge from '@/components/ViolationTypeBadge'
-import { PLATFORMS, VIOLATION_TYPES } from '@/lib/constants'
+import { PLATFORMS, VIOLATION_TYPES, REPORT_STATUSES } from '@/lib/constants'
 import { formatDate, getCountryName } from '@/lib/utils'
 import { toast } from 'sonner'
 
@@ -193,6 +193,60 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
             </Link>
           </div>
         )}
+      </div>
+
+      {/* Status Timeline */}
+      <div className="mb-6">
+        <h2 className="text-lg font-semibold text-dark mb-3">Report Progress</h2>
+        <div className="card p-5">
+          <div className="flex items-center gap-1 overflow-x-auto">
+            {REPORT_STATUSES.filter(s => s.id !== 'draft' && s.id !== 'dismissed').map((status, i, arr) => {
+              const statusOrder = ['submitted', 'under_review', 'forwarded', 'resolved']
+              const currentIndex = statusOrder.indexOf(report.status === 'dismissed' ? 'submitted' : report.status)
+              const stepIndex = statusOrder.indexOf(status.id)
+              const isActive = stepIndex <= currentIndex
+              const isCurrent = status.id === report.status
+
+              return (
+                <div key={status.id} className="flex items-center flex-1 min-w-0">
+                  <div className="flex flex-col items-center text-center flex-shrink-0">
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
+                      isCurrent
+                        ? 'bg-brand-400 text-white ring-4 ring-brand-100'
+                        : isActive
+                        ? 'bg-brand-400 text-white'
+                        : 'bg-[#f5f5f7] text-dark-400'
+                    }`}>
+                      {isActive && !isCurrent ? (
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      ) : (
+                        i + 1
+                      )}
+                    </div>
+                    <span className={`text-[10px] mt-1 leading-tight ${isCurrent ? 'font-semibold text-brand-400' : 'text-dark-400'}`}>
+                      {status.name}
+                    </span>
+                  </div>
+                  {i < arr.length - 1 && (
+                    <div className={`flex-1 h-0.5 mx-1 rounded ${isActive && stepIndex < currentIndex ? 'bg-brand-400' : 'bg-[#f5f5f7]'}`} />
+                  )}
+                </div>
+              )
+            })}
+          </div>
+          {report.status === 'dismissed' && (
+            <p className="text-xs text-red-500 mt-3 text-center">This report has been dismissed.</p>
+          )}
+          <p className="text-xs text-dark-400 mt-3">
+            {report.status === 'submitted' && 'Your report has been received. A council admin will review it shortly.'}
+            {report.status === 'under_review' && 'A council admin is reviewing your evidence and DSA article mapping.'}
+            {report.status === 'forwarded' && 'Your report has been forwarded to Digital Services Coordinators (national DSA regulators) across EU member states.'}
+            {report.status === 'resolved' && 'This report has been resolved. The platform took action or the regulatory process concluded.'}
+            {report.status === 'dismissed' && 'This report was reviewed and dismissed. If you believe this is an error, contact your council admin.'}
+          </p>
+        </div>
       </div>
 
       {/* Evidence */}
