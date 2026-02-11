@@ -2,11 +2,12 @@
 
 import Link from 'next/link'
 import EuropeMap from '@/components/EuropeMap'
+import CouncilCard from '@/components/CouncilCard'
 import { useCouncils } from '@/hooks/useCouncils'
 import { useAuth } from '@/contexts/AuthContext'
 
 export default function CouncilsPage() {
-  const { councils } = useCouncils({})
+  const { councils, loading } = useCouncils({})
   const { user } = useAuth()
 
   return (
@@ -28,6 +29,31 @@ export default function CouncilsPage() {
         <h2 className="text-lg font-semibold text-dark mb-1 text-center">Councils Across Europe</h2>
         <p className="text-sm text-dark-400 mb-4 text-center">Hover over highlighted countries to see council details</p>
         <EuropeMap councils={councils} />
+      </div>
+
+      {/* Council List */}
+      <div className="mt-10">
+        <h2 className="text-xl font-semibold text-dark mb-4">
+          All Councils {councils.length > 0 && `(${councils.length})`}
+        </h2>
+        {loading ? (
+          <div className="text-center py-8 text-dark-400">Loading councils...</div>
+        ) : councils.length === 0 ? (
+          <div className="card p-8 text-center">
+            <p className="text-dark-400 mb-3">No councils have been created yet. Be the first!</p>
+            {user && (
+              <Link href="/councils/create" className="btn-primary">
+                Create a Council
+              </Link>
+            )}
+          </div>
+        ) : (
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {councils.map((council) => (
+              <CouncilCard key={council.id} council={council} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )

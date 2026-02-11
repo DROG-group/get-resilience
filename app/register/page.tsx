@@ -68,6 +68,21 @@ export default function RegisterPage() {
           </p>
         </div>
 
+        <div className="mb-6 space-y-2 text-sm text-dark-400">
+          <div className="flex items-start gap-2">
+            <span className="text-brand-400 mt-0.5">&#10003;</span>
+            <span>Join or create a Resilience Council in your country</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-brand-400 mt-0.5">&#10003;</span>
+            <span>Submit DSA violation reports with evidence</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="text-brand-400 mt-0.5">&#10003;</span>
+            <span>Coordinate with fellow citizens across the EU</span>
+          </div>
+        </div>
+
         <form onSubmit={handleSubmit} className="card p-8 space-y-5">
           {error && (
             <div className="bg-red-50 text-red-700 border border-red-200 px-4 py-3 rounded-lg text-sm">
@@ -129,6 +144,11 @@ export default function RegisterPage() {
             <Link href="/login" className="text-brand-400 font-medium hover:underline">
               Sign in
             </Link>
+          </p>
+
+          <p className="text-center text-xs text-dark-400/70 mt-2">
+            Your data is processed under GDPR for the SAUFEX research project (Horizon Europe grant No. 101132494).
+            See our <Link href="/privacy" className="underline hover:text-dark-400">privacy policy</Link>.
           </p>
         </form>
       </div>

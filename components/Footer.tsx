@@ -64,8 +64,7 @@ export default function Footer() {
                   EMOD e-Learning
                 </a>
               </li>
-              <li><Link href="#" className="hover:text-white transition-colors">Privacy</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Data Management</Link></li>
+              <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy &amp; Data Management</Link></li>
             </ul>
             <div className="mt-4">
               <p className="text-xs text-white/40">

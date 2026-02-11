@@ -61,12 +61,12 @@ export default function DashboardPage() {
             </div>
             <div className="flex-1">
               <h3 className={`font-semibold ${training.completed ? 'text-emerald-800' : 'text-amber-800'}`}>
-                {training.completed ? 'DSA Training Complete' : 'DSA Training Required'}
+                {training.completed ? 'DSA Training Complete' : 'Complete Your DSA Training'}
               </h3>
               <p className={`text-sm mt-0.5 ${training.completed ? 'text-emerald-700' : 'text-amber-700'}`}>
                 {training.completed
                   ? `You have completed the required training. Certificate: ${training.certificateCode}`
-                  : 'Complete the DSA reporting course on EMOD to unlock report submission.'}
+                  : 'A short free course on EMOD will prepare you to submit effective DSA reports. Takes about 30 minutes.'}
               </p>
               {!training.completed && (
                 <a
