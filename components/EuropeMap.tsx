@@ -122,6 +122,18 @@ const countryShapes: CountryShape[] = [
   },
 ]
 
+// Reverse lookup: country name -> code
+const nameToCode: Record<string, string> = {}
+countryShapes.forEach((c) => { nameToCode[c.name.toUpperCase()] = c.id })
+
+function resolveCountryCode(value: string): string {
+  const upper = value.toUpperCase()
+  // If it's already a 2-letter code that matches a shape, use it
+  if (countryShapes.some((s) => s.id === upper)) return upper
+  // Otherwise try to match by name
+  return nameToCode[upper] || upper
+}
+
 type EuropeMapProps = {
   councils?: Council[]
 }
@@ -131,7 +143,7 @@ export default function EuropeMap({ councils = [] }: EuropeMapProps) {
 
   // Group councils by country code, aggregating counts
   const councilsByCountry = councils.reduce<Record<string, { names: string[]; members: number; reports: number }>>((acc, c) => {
-    const code = c.country.toUpperCase()
+    const code = resolveCountryCode(c.country)
     if (!acc[code]) {
       acc[code] = { names: [], members: 0, reports: 0 }
     }
