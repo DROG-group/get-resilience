@@ -173,7 +173,7 @@ export default function HomePage() {
               How Resilience Councils Work
             </h2>
             <p className="text-center text-dark-400 mb-16 max-w-2xl mx-auto">
-              Citizen-led bodies that coordinate disinformation reports to EU regulators using a whole-of-society approach.
+              Citizen-led groups that bring together citizens, civil society, and researchers to coordinate disinformation reports to EU regulators.
             </p>
           </ScrollReveal>
 
@@ -248,7 +248,7 @@ export default function HomePage() {
                 <div className="text-xs font-bold text-brand-400 uppercase tracking-wider mb-1">Step 3</div>
                 <h3 className="text-xl font-bold text-dark mb-1">Coordinated EU Filing</h3>
                 <p className="text-dark-400">
-                  Your council submits identical evidence to all 27 Digital Services Coordinators (DSCs) — the national regulators each EU country has appointed to enforce the DSA — simultaneously.
+                  Your council submits identical evidence to all 27 Digital Services Coordinators (DSCs), the national regulators each EU country has appointed to enforce the DSA, simultaneously.
                   Under Art. 51 &amp; 56, they <em>must</em> coordinate their response.
                 </p>
               </div>

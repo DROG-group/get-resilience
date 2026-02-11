@@ -78,8 +78,8 @@ export default function AboutPage() {
         <ScrollReveal>
           <h2 className="text-2xl font-bold text-dark mb-4">What Are Resilience Councils?</h2>
           <p className="text-dark-400 mb-8">
-            Citizen-led governance bodies that coordinate disinformation reports using a &ldquo;whole-of-society&rdquo; approach,
-            bringing together citizens, civil society, media, researchers, and policymakers.
+            Citizen-led groups that bring together citizens, civil society, media, researchers, and policymakers
+            to coordinate disinformation reports across borders.
           </p>
         </ScrollReveal>
 
@@ -124,7 +124,7 @@ export default function AboutPage() {
               <ul className="space-y-2 text-sm text-dark-400">
                 <li className="flex items-start gap-2">
                   <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
-                  <span>They deepen democracy by giving citizens a direct voice in platform governance</span>
+                  <span>They give citizens a direct voice in how platforms are governed</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
@@ -132,7 +132,7 @@ export default function AboutPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
-                  <span>They build community trust and shared expertise in counter-disinformation</span>
+                  <span>Members learn from each other and build trust through joint action</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <IconCheck className="w-4 h-4 text-brand-400 mt-0.5 flex-shrink-0" />
@@ -152,7 +152,7 @@ export default function AboutPage() {
             <p className="text-white/90 text-sm leading-relaxed">
               In 2024, Poland became the first EU nation to implement a SAUFEX Resilience Council, led by
               PORT Lukasiewicz. The council integrates government officials, civil society, academic experts,
-              and citizens for election disinformation prevention. This pioneering model now inspires similar councils across the EU.
+              and citizens for election disinformation prevention. This model is now being adopted by similar councils across the EU.
             </p>
           </div>
         </ScrollReveal>

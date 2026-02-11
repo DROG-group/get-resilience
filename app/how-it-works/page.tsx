@@ -22,7 +22,7 @@ export default function HowItWorksPage() {
           <p className="text-sm text-dark-400 leading-relaxed">
             Platforms process millions of individual reports daily and most get dismissed.
             The DSA&apos;s real power lies in cross-border mechanisms: when identical complaints reach multiple
-            Digital Services Coordinators (DSCs — the national regulator each EU country has appointed to enforce the DSA) simultaneously, they must coordinate their response (Art. 51 &amp; 56).
+            Digital Services Coordinators (DSCs, the national regulator each EU country has appointed to enforce the DSA) simultaneously, they must coordinate their response (Art. 51 &amp; 56).
           </p>
         </div>
       </ScrollReveal>
@@ -314,7 +314,7 @@ export default function HowItWorksPage() {
                     <h3 className="font-semibold text-dark text-sm mb-1">The Path to Trusted Flagger Status</h3>
                     <p className="text-xs text-dark-400 leading-relaxed">
                       Under DSA Article 22, organizations that demonstrate expertise in identifying illegal content can apply
-                      for &ldquo;Trusted Flagger&rdquo; status with their national DSC. Platforms must process Trusted Flagger
+                      for &quot;Trusted Flagger&quot; status with their national DSC. Platforms must process Trusted Flagger
                       reports faster and with greater care. As councils build a track record of accurate, well-documented reports,
                       they become eligible to apply for this status.
                     </p>
@@ -331,7 +331,7 @@ export default function HowItWorksPage() {
         <div className="mb-20">
           <h2 className="text-2xl font-bold text-dark mb-3 text-center">Your Report&apos;s Journey</h2>
           <p className="text-center text-dark-400 mb-8 max-w-2xl mx-auto">
-            Here&apos;s what happens at each stage — and what you can expect in terms of timeline.
+            Here&apos;s what happens at each stage, and what you can expect in terms of timeline.
           </p>
 
           <div className="space-y-0">

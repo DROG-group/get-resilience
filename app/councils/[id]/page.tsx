@@ -261,21 +261,21 @@ export default function CouncilDetailPage({ params }: { params: Promise<{ id: st
                 <div className="w-6 h-6 bg-brand-400 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</div>
                 <div>
                   <p className="text-sm font-medium text-dark">Review incoming reports</p>
-                  <p className="text-xs text-dark-400">Check that evidence is clear, the violation type is correct, and the right DSA articles are mapped. Mark reports as &ldquo;Under Review&rdquo; when you start.</p>
+                  <p className="text-xs text-dark-400">Check that evidence is clear, the violation type is correct, and the right DSA articles are mapped. Mark reports as "Under Review" when you start.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-6 h-6 bg-brand-400 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</div>
                 <div>
                   <p className="text-sm font-medium text-dark">Forward to EU regulators</p>
-                  <p className="text-xs text-dark-400">When a report is solid, mark it as &ldquo;Forwarded to EU&rdquo;. This signals that the structured evidence has been sent to Digital Services Coordinators across EU member states.</p>
+                  <p className="text-xs text-dark-400">When a report is solid, mark it as "Forwarded to EU". This signals that the structured evidence has been sent to Digital Services Coordinators across EU member states.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <div className="w-6 h-6 bg-brand-400 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</div>
                 <div>
                   <p className="text-sm font-medium text-dark">Manage your team</p>
-                  <p className="text-xs text-dark-400">Promote trusted members to moderator so they can also review reports. Quality over quantity — well-documented reports with proper evidence are worth more than volume.</p>
+                  <p className="text-xs text-dark-400">Promote trusted members to moderator so they can also review reports. Quality over quantity: well-documented reports with proper evidence are worth more than volume.</p>
                 </div>
               </div>
             </div>

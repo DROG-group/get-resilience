@@ -7,15 +7,15 @@ const faqs = [
     questions: [
       {
         q: 'What is GetResilience?',
-        a: 'GetResilience is a platform that enables EU citizens to form Resilience Councils — citizen-led groups that coordinate reports about online platform violations (disinformation, hate speech, manipulation, etc.) to EU regulators under the Digital Services Act (DSA). By coordinating reports across multiple countries, councils trigger mandatory regulatory investigation that individual complaints cannot.',
+        a: 'GetResilience is a platform where EU citizens form Resilience Councils: citizen-led groups that coordinate reports about online platform violations (disinformation, hate speech, manipulation, etc.) to EU regulators under the Digital Services Act (DSA). By coordinating reports across multiple countries, councils trigger mandatory regulatory investigation that individual complaints cannot.',
       },
       {
         q: 'What is the Digital Services Act (DSA)?',
-        a: 'The Digital Services Act is an EU regulation that took full effect in February 2024. It creates legally binding obligations for online platforms — including social media, search engines, and marketplaces — to address illegal content, protect users\' rights, and be transparent about their content moderation. For the first time, it gives citizens real legal tools to hold platforms accountable.',
+        a: 'The Digital Services Act is an EU regulation that took full effect in February 2024. It creates legally binding obligations for online platforms (social media, search engines, and marketplaces) to address illegal content, protect users\' rights, and be transparent about their content moderation. For the first time, it gives citizens real legal tools to hold platforms accountable.',
       },
       {
         q: 'What is a Digital Services Coordinator (DSC)?',
-        a: 'Every EU member state has appointed a Digital Services Coordinator — a national regulatory authority responsible for enforcing the DSA in that country. For example, Ireland\'s DSC is Coimisiún na Meán, and the Netherlands\' is the Authority for Consumers & Markets (ACM). When GetResilience says reports are "forwarded to EU DSCs", it means your structured evidence is sent to these 27 national regulators simultaneously.',
+        a: 'Every EU member state has appointed a Digital Services Coordinator, a national regulatory authority responsible for enforcing the DSA in that country. For example, Ireland\'s DSC is Coimisiún na Meán, and the Netherlands\' is the Authority for Consumers & Markets (ACM). When GetResilience says reports are "forwarded to EU DSCs", it means your structured evidence is sent to these 27 national regulators at once.',
       },
       {
         q: 'Do I need to be an EU citizen to use GetResilience?',
@@ -32,11 +32,11 @@ const faqs = [
     questions: [
       {
         q: 'Why do I need to complete training before submitting reports?',
-        a: 'The DSA training on EMOD teaches you how to identify violations, gather proper evidence, and understand which DSA articles apply. This isn\'t a bureaucratic hurdle — it\'s what makes your reports effective. Structured reports that reference specific DSA articles and include proper evidence trigger formal investigation. Vague complaints get dismissed. The training takes about 30 minutes and is free.',
+        a: 'The DSA training on EMOD teaches you how to identify violations, gather proper evidence, and understand which DSA articles apply. This isn\'t a bureaucratic hurdle. It\'s what makes your reports effective. Structured reports that reference specific DSA articles and include proper evidence trigger formal investigation. Vague complaints get dismissed. The training takes about 30 minutes and is free.',
       },
       {
         q: 'What is EMOD?',
-        a: 'EMOD (European Master of Disinformation) is SAUFEX\'s free e-learning platform with 64+ modules on disinformation detection, media literacy, and platform governance. The specific course required for GetResilience — "DSA Reporting for Resilience Councils" — covers 12 modules across 5 chapters. You can explore additional learning paths after completing the required course.',
+        a: 'EMOD (European Master of Disinformation) is SAUFEX\'s free e-learning platform with 64+ modules on disinformation detection, media literacy, and platform governance. The specific course required for GetResilience, "DSA Reporting for Resilience Councils", covers 12 modules across 5 chapters. You can explore additional learning paths after completing the required course.',
       },
       {
         q: 'Are my EMOD and GetResilience accounts linked?',
@@ -49,7 +49,7 @@ const faqs = [
     questions: [
       {
         q: 'What is a Resilience Council?',
-        a: 'A Resilience Council is a citizen-led group organized around a country and focus area (e.g., "Election Integrity" in Poland, or "Climate Disinformation" in the Netherlands). Members document platform violations, and the council coordinates submissions to EU regulators. The goal is to establish systemic patterns that individual reports cannot — which is what triggers mandatory regulatory action under the DSA.',
+        a: 'A Resilience Council is a citizen-led group organized around a country and focus area (e.g., "Election Integrity" in Poland, or "Climate Disinformation" in the Netherlands). Members document platform violations, and the council coordinates submissions to EU regulators. The goal is to establish systemic patterns that individual reports cannot, which is what triggers mandatory regulatory action under the DSA.',
       },
       {
         q: 'Who can create a council?',
@@ -57,11 +57,11 @@ const faqs = [
       },
       {
         q: 'What are the admin\'s responsibilities?',
-        a: 'Council admins review incoming reports to ensure they meet evidence standards, promote trusted members to moderator roles, and coordinate when reports should be forwarded to regulators. The goal is quality over quantity — a well-documented report with proper DSA article mapping is worth more than dozens of vague complaints.',
+        a: 'Council admins review incoming reports to make sure they meet evidence standards, promote trusted members to moderator roles, and coordinate when reports should be forwarded to regulators. Quality over quantity: a well-documented report with proper DSA article mapping is worth more than dozens of vague complaints.',
       },
       {
         q: 'What is a Trusted Flagger?',
-        a: 'Under DSA Article 22, organizations with demonstrated expertise in identifying illegal content can apply for "Trusted Flagger" status with their national Digital Services Coordinator. Trusted Flaggers get priority treatment — platforms must process their reports faster and with more care. As a council builds a track record of accurate, well-documented reports, it can work toward this status.',
+        a: 'Under DSA Article 22, organizations with a proven track record in identifying illegal content can apply for "Trusted Flagger" status with their national Digital Services Coordinator. Platforms must process Trusted Flagger reports faster and with more care. As a council builds a track record of accurate, well-documented reports, it becomes eligible to apply.',
       },
       {
         q: 'Can a council be moderated or removed?',
@@ -74,15 +74,15 @@ const faqs = [
     questions: [
       {
         q: 'What happens after I submit a report?',
-        a: 'Your report goes through several stages: (1) Submitted — your report is received and visible to your council. (2) Under Review — a council admin or moderator reviews your evidence and DSA article mapping. (3) Forwarded to EU DSCs — your council sends the structured evidence to Digital Services Coordinators across EU member states. (4) Resolved — the regulatory process has concluded, or the platform has taken action. At each stage, you can check your report\'s status on your dashboard.',
+        a: 'Your report goes through several stages: (1) Submitted: your report is received and visible to your council. (2) Under Review: a council admin or moderator checks your evidence and DSA article mapping. (3) Forwarded to EU DSCs: your council sends the structured evidence to Digital Services Coordinators across EU member states. (4) Resolved: the regulatory process has concluded, or the platform has taken action. You can check your report\'s status on your dashboard at any time.',
       },
       {
         q: 'How long does the process take?',
-        a: 'The timeline varies. Council review typically happens within days. Once forwarded to DSCs, the regulatory process depends on the severity and scope of the violation. For systemic issues affecting multiple countries, the DSA requires coordinators to respond, but formal investigations can take weeks to months. GetResilience is about building a documented record — even if individual cases take time, the cumulative evidence strengthens enforcement.',
+        a: 'The timeline varies. Council review typically happens within days. Once forwarded to DSCs, the regulatory process depends on the severity and scope of the violation. For systemic issues affecting multiple countries, the DSA requires coordinators to respond, but formal investigations can take weeks to months. Even if individual cases take time, the cumulative evidence strengthens enforcement over time.',
       },
       {
         q: 'Will I be notified of outcomes?',
-        a: 'You can track your report\'s status on your dashboard. As council admins update the status (Under Review → Forwarded → Resolved), you\'ll see the changes. Full regulatory transparency is still evolving as DSCs establish their processes, but your report remains permanently documented.',
+        a: 'You can track your report\'s status on your dashboard. As council admins update the status (Under Review, Forwarded, Resolved), you\'ll see the changes. Full regulatory transparency is still evolving as DSCs set up their processes, but your report remains permanently documented.',
       },
       {
         q: 'Can I submit a report without joining a council?',
@@ -90,7 +90,7 @@ const faqs = [
       },
       {
         q: 'What kind of evidence should I include?',
-        a: 'The strongest reports include: (1) A direct URL to the violating content. (2) Screenshots — content often gets deleted once flagged, so visual evidence is critical. (3) Context about why the content violates the DSA (the violation type selector helps with this). (4) Any additional files that support your case. The EMOD training covers evidence standards in detail.',
+        a: 'The strongest reports include: (1) A direct URL to the violating content. (2) Screenshots, because content often gets deleted once flagged, so visual evidence is critical. (3) Context about why the content violates the DSA (the violation type selector helps with this). (4) Any additional files that support your case. The EMOD training covers evidence standards in detail.',
       },
     ],
   },
@@ -120,7 +120,7 @@ const faqs = [
       },
       {
         q: 'What is "systemic risk" under the DSA?',
-        a: 'DSA Article 34 requires very large platforms (those with 45+ million EU users, like Facebook, YouTube, TikTok, and X) to identify and assess "systemic risks" — including disinformation, election manipulation, and negative effects on fundamental rights. When coordinated reports from multiple countries document the same type of violation, they help establish that a systemic risk exists, which triggers mandatory risk assessment by the platform.',
+        a: 'DSA Article 34 requires very large platforms (those with 45+ million EU users, like Facebook, YouTube, TikTok, and X) to identify and assess "systemic risks". This includes disinformation, election manipulation, and negative effects on fundamental rights. When coordinated reports from multiple countries document the same type of violation, they help establish that a systemic risk exists, which triggers mandatory risk assessment by the platform.',
       },
       {
         q: 'What are "very large online platforms" (VLOPs)?',
