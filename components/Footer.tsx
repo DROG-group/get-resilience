@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-[#fafafa] font-bold text-lg mb-4 flex items-center gap-2">
-              <Image src="/saufex-logo.png" alt="SAUFEX" width={24} height={24} className="rounded" />
+              <Image src="/saufex-logo-small.png" alt="SAUFEX" width={24} height={24} className="rounded" unoptimized />
               GetResilience
             </h3>
             <p className="text-sm text-white/60 leading-relaxed mb-3">
