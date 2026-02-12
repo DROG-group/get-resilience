@@ -144,6 +144,28 @@ export default function AboutPage() {
         </div>
 
         <ScrollReveal>
+          <div className="bg-[#f5f5f7] rounded-2xl p-6 mb-6">
+            <h3 className="font-semibold text-dark text-sm mb-2">GetResilience and the Broader SAUFEX Model</h3>
+            <p className="text-xs text-dark-400 leading-relaxed">
+              The SAUFEX research project envisions Resilience Councils at multiple levels: local citizen groups,
+              national expert advisory bodies, and a European-level coordination structure that works directly with
+              governments and Digital Services Coordinators. GetResilience focuses on the citizen-driven foundation of
+              this model. Any trained EU citizen can create a council and start coordinating DSA reports. As councils
+              build a track record of quality reporting, they can work toward formal recognition and
+              Trusted Flagger status. For the full SAUFEX Resilience Council framework, see the{' '}
+              <a
+                href="https://docs.saufex.eu/resilience-council-handbookfinal%20(1).pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-400 hover:text-brand-300 font-medium"
+              >
+                Resilience Council Handbook
+              </a>.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal>
           <div className="bg-brand-400 text-white rounded-2xl p-8">
             <div className="flex items-center gap-3 mb-3">
               <IconShield className="w-6 h-6 text-white" />

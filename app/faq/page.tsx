@@ -49,7 +49,7 @@ const faqs = [
     questions: [
       {
         q: 'What is a Resilience Council?',
-        a: 'A Resilience Council is a citizen-led group organized around a country and focus area (e.g., "Election Integrity" in Poland, or "Climate Disinformation" in the Netherlands). Members document platform violations, and the council coordinates submissions to EU regulators. The goal is to establish systemic patterns that individual reports cannot, which is what triggers mandatory regulatory action under the DSA.',
+        a: 'A Resilience Council is a citizen-led group organized around a country and focus area (e.g., "Election Integrity" in Poland, or "Climate Disinformation" in the Netherlands). Members document platform violations, and the council coordinates submissions to EU regulators. The goal is to establish systemic patterns that individual reports cannot, which triggers mandatory regulatory action under the DSA. GetResilience councils are the citizen-driven foundation of the broader SAUFEX Resilience Council model, which also includes expert advisory bodies and European-level coordination. Councils that build a strong reporting track record can work toward formal recognition and Trusted Flagger status.',
       },
       {
         q: 'Who can create a council?',
