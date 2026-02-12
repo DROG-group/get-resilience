@@ -54,7 +54,7 @@ export default function DashboardPage() {
               <div className="flex-1">
                 <h3 className="font-semibold text-dark">Complete DSA Training on EMOD</h3>
                 <p className="text-sm text-dark-400 mt-0.5">
-                  A free course that teaches you how to identify violations and file reports that meet EU standards. Takes about 30 minutes.
+                  A free course that teaches you how to identify violations and file reports that meet EU standards. Takes about 2 hours.
                 </p>
                 <a
                   href="https://emod.saufex.eu/dashboard"

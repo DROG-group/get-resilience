@@ -390,7 +390,7 @@ export default function HowItWorksPage() {
         <div className="bg-white rounded-2xl border border-black/[0.08] p-8 mb-20">
           <h2 className="text-xl font-bold text-dark mb-3">Want to Learn More About Disinformation?</h2>
           <p className="text-dark-400 text-sm mb-4">
-            SAUFEX&apos;s sister platform <strong>EMOD</strong> offers 64 free e-learning modules on disinformation
+            SAUFEX&apos;s sister platform <strong>EMOD</strong> offers 75+ free e-learning modules on disinformation
             detection, verification, counter-messaging, and platform governance.
           </p>
           <a

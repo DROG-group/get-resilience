@@ -65,7 +65,7 @@ function TrainingGate({ children }: { children: React.ReactNode }) {
         <div className="text-center">
           <p className="text-sm text-dark-400 mb-4">
             The training covers DSA article mapping, evidence standards, and coordinated reporting
-            best practices. It takes approximately 3 hours to complete.
+            best practices. It takes about 2 hours to complete.
           </p>
           <a
             href="https://emod.saufex.eu/dashboard"

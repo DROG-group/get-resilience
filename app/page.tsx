@@ -60,7 +60,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { value: 83, suffix: '%', prefix: '', label: 'see it as a threat', backText: 'of Europeans see disinformation as a threat to democracy (Eurobarometer 2024).' },
-              { value: 6, suffix: 'x', prefix: '', label: 'faster spread', backText: 'False stories spread 6x faster than true ones because platforms profit from engagement over accuracy.' },
+              { value: 6, suffix: 'x', prefix: '', label: 'faster spread', backText: 'False stories spread 6x faster than accurate corrections on social media (Vosoughi et al., Science, 2018).' },
               { value: 1, suffix: '%', prefix: '<', label: 'reports acted on', backText: 'Less than 1% of individual user reports result in meaningful action. Without coordination, complaints disappear.' },
             ].map((stat, i) => (
               <ScrollReveal key={stat.label} delay={i * 100}>
@@ -419,7 +419,7 @@ export default function HomePage() {
                     <h3 className="font-semibold text-dark">EMOD e-Learning</h3>
                   </div>
                   <p className="text-sm text-dark-400 mb-3">
-                    The knowledge platform. 64 free modules teaching how to detect disinformation,
+                    The knowledge platform. 75+ free modules teaching how to detect disinformation,
                     verify information, and understand platform manipulation.
                   </p>
                   <a
@@ -442,7 +442,7 @@ export default function HomePage() {
                 { value: 6, label: 'Consortium Partners' },
                 { value: 5, label: 'EU Countries' },
                 { value: 170, label: 'Research Articles', suffix: '+' },
-                { value: 50, label: 'Training Modules', suffix: '+' },
+                { value: 75, label: 'Training Modules', suffix: '+' },
               ].map((stat) => (
                 <div key={stat.label}>
                   <div className="text-3xl sm:text-4xl font-extrabold text-brand-400">

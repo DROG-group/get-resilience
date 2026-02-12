@@ -32,11 +32,11 @@ const faqs = [
     questions: [
       {
         q: 'Why do I need to complete training before submitting reports?',
-        a: 'The DSA training on EMOD teaches you how to identify violations, gather proper evidence, and understand which DSA articles apply. This isn\'t a bureaucratic hurdle. It\'s what makes your reports effective. Structured reports that reference specific DSA articles and include proper evidence trigger formal investigation. Vague complaints get dismissed. The training takes about 30 minutes and is free.',
+        a: 'The DSA training on EMOD teaches you how to identify violations, gather proper evidence, and understand which DSA articles apply. This isn\'t a bureaucratic hurdle. It\'s what makes your reports effective. Structured reports that reference specific DSA articles and include proper evidence trigger formal investigation. Vague complaints get dismissed. The training takes about 2 hours and is free.',
       },
       {
         q: 'What is EMOD?',
-        a: 'EMOD (European Master of Disinformation) is SAUFEX\'s free e-learning platform with 64+ modules on disinformation detection, media literacy, and platform governance. The specific course required for GetResilience, "DSA Reporting for Resilience Councils", covers 12 modules across 5 chapters. You can explore additional learning paths after completing the required course.',
+        a: 'EMOD (European Master of Countering Disinformation) is SAUFEX\'s free e-learning platform with 75+ modules on disinformation detection, media literacy, and platform governance. The specific course required for GetResilience, "DSA Reporting for Resilience Councils", covers 12 modules across 5 chapters. You can explore additional learning paths after completing the required course.',
       },
       {
         q: 'Are my EMOD and GetResilience accounts linked?',

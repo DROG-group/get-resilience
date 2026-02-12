@@ -30,7 +30,7 @@ export default function AboutPage() {
               iconBg: 'bg-red-100',
               title: 'The Threat',
               summary: 'Foreign information manipulation undermines EU democracy.',
-              backText: 'False stories spread 6x faster than true ones because platforms profit from engagement. 83% of Europeans see disinformation as a threat to democracy.',
+              backText: 'False stories spread 6x faster than accurate corrections on social media. 83% of Europeans see disinformation as a threat to democracy.',
               backBg: 'bg-red-500',
             },
             {
@@ -150,7 +150,7 @@ export default function AboutPage() {
               <h3 className="font-bold text-lg">First Council: Poland</h3>
             </div>
             <p className="text-white/90 text-sm leading-relaxed">
-              In 2024, Poland became the first EU nation to implement a SAUFEX Resilience Council, led by
+              In 2025, Poland became the first EU nation to formally establish a SAUFEX Resilience Council, led by
               PORT Lukasiewicz. The council integrates government officials, civil society, academic experts,
               and citizens for election disinformation prevention. This model is now being adopted by similar councils across the EU.
             </p>
@@ -242,8 +242,8 @@ export default function AboutPage() {
               <div className="flex-1">
                 <h3 className="font-bold text-dark text-lg mb-2">EMOD: European Master of Countering Disinformation</h3>
                 <p className="text-dark-400 text-sm mb-4">
-                  A free e-learning platform with 64 modules across 10 learning paths, totaling 19+ hours of
-                  evidence-based content. Self-paced modules designed for 8-10 minute completion.
+                  A free e-learning platform with 75+ modules across 10+ learning paths.
+                  Self-paced modules designed for 8-10 minute completion.
                 </p>
 
                 <div className="grid sm:grid-cols-2 gap-4 mb-4">
@@ -251,20 +251,24 @@ export default function AboutPage() {
                     <p className="text-xs font-semibold text-dark mb-2">Learning Paths</p>
                     <ul className="space-y-1 text-xs text-dark-400">
                       <li>Understanding Disinformation Basics</li>
+                      <li>Understanding FIMI Operations</li>
                       <li>Media Literacy Fundamentals</li>
                       <li>Detection and Verification</li>
                       <li>Counter-Messaging Strategies</li>
                       <li>Platform Governance</li>
-                      <li>Disinfonomics</li>
+                      <li>AI and Hybrid Threats</li>
+                      <li>DSA Reporting for Resilience Councils</li>
                     </ul>
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-dark mb-2">Designed For</p>
                     <ul className="space-y-1 text-xs text-dark-400">
-                      <li>Policymakers (33 modules)</li>
-                      <li>Journalists (39 modules)</li>
-                      <li>Researchers (46 modules)</li>
-                      <li>Citizens (14 modules)</li>
+                      <li>Policymakers</li>
+                      <li>Journalists</li>
+                      <li>Researchers</li>
+                      <li>Citizens</li>
+                      <li>Educators</li>
+                      <li>Civil society organisations</li>
                     </ul>
                   </div>
                 </div>
