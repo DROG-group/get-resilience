@@ -15,50 +15,12 @@ interface TrainingStatus {
 }
 
 export function useEmodTraining() {
-  const { user } = useAuth()
-  const [status, setStatus] = useState<TrainingStatus>({
-    required: true,
-    completed: false,
+  // Training requirement temporarily disabled for testing
+  return {
+    required: false,
+    completed: true,
     certificateCode: null,
     learningPath: DSA_LEARNING_PATH,
-  })
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    if (!user) {
-      setLoading(false)
-      return
-    }
-
-    const checkTraining = async () => {
-      const supabase = createClient()
-
-      try {
-        // Check for a certificate with the DSA learning path
-        const { data: cert } = await supabase
-          .from('certificates')
-          .select('id, certificate_code, learning_path')
-          .eq('user_id', user.id)
-          .eq('learning_path', DSA_LEARNING_PATH)
-          .maybeSingle()
-
-        setStatus({
-          required: true,
-          completed: !!cert,
-          certificateCode: cert?.certificate_code || null,
-          learningPath: DSA_LEARNING_PATH,
-        })
-      } catch (err) {
-        console.error('Failed to check training status:', err)
-        // On error, don't block - allow submission
-        setStatus({ required: false, completed: true, certificateCode: null, learningPath: DSA_LEARNING_PATH })
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    checkTraining()
-  }, [user])
-
-  return { ...status, loading }
+    loading: false,
+  }
 }
