@@ -6,6 +6,9 @@
 # ── Build stage ──────────────────────────────
 FROM node:22-alpine AS builder
 
+# next.config.mjs embeds the current Git commit during the build.
+RUN apk add --no-cache git
+
 WORKDIR /app
 
 COPY package*.json ./
